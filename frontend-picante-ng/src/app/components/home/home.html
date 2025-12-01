@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger px-4 shadow-sm">
+  <a class="navbar-brand fw-bold" href="#">🌶️ El Picante System</a>
+  <div class="ms-auto">
+    <span class="text-white me-3" *ngIf="currentUser">
+      Hola, {{ currentUser.username }}
+    </span>
+    <button class="btn btn-light btn-sm text-danger fw-bold" (click)="logout()">
+      Salir
+    </button>
+  </div>
+</nav>
+
+<div class="container mt-5" *ngIf="currentUser">
+  <div class="card shadow-lg border-0">
+    <div class="card-body p-5 text-center">
+      <h1 class="display-4 text-danger mb-3">¡Bienvenido al Sistema!</h1>
+      <p class="lead text-muted">Has iniciado sesión correctamente.</p>
+      
+      <div class="row mt-5 justify-content-center">
+        <div class="col-md-8">
+          <div class="alert alert-secondary text-start">
+            <h5 class="alert-heading fw-bold">🛡️ Credenciales activas:</h5>
+            <hr>
+            <p class="mb-1"><strong>Usuario:</strong> {{ currentUser.username }}</p>
+            <p class="mb-1"><strong>Email:</strong> {{ currentUser.email }}</p>
+            <p class="mb-1"><strong>Roles:</strong> {{ currentUser.roles }}</p>
+            <p class="mb-0 text-truncate"><strong>Token:</strong> <small>{{ currentUser.accessToken }}</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 d-flex gap-3 justify-content-center">
+        <button class="btn btn-outline-danger btn-lg">Ver Carta</button>
+        <button class="btn btn-danger btn-lg">Nuevo Pedido</button>
+      </div>
+    </div>
+  </div>
+</div>

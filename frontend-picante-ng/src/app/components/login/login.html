@@ -1,0 +1,108 @@
+<div class="login-background">
+  
+  <div class="container h-100">
+    <div class="row h-100 align-items-center justify-content-center">
+
+      <div class="col-md-5 d-flex justify-content-center order-2 order-md-1">
+        <div class="glass-card login-card animate-fade-in">
+          
+          <div class="text-center mb-4">
+            <h1 class="picante-title">El Picante</h1>
+            <div class="chili-icon">🌶️</div> 
+          </div>
+
+          <form (ngSubmit)="onSubmit()" #f="ngForm">
+            <div class="input-group mb-3 custom-input-group">
+              <span class="input-group-text"><i class="bi bi-person-fill text-danger"></i></span>
+              <input type="text" class="form-control" placeholder="Usuario" name="username" [(ngModel)]="form.username" required>
+            </div>
+
+            <div class="input-group mb-4 custom-input-group">
+              <span class="input-group-text"><i class="bi bi-lock-fill text-danger"></i></span>
+              <input type="password" class="form-control" placeholder="Contraseña" name="password" [(ngModel)]="form.password" required>
+              <span class="input-group-text"><i class="bi bi-eye-slash text-danger"></i></span>
+            </div>
+
+            <div class="d-grid gap-3">
+              <button type="submit" class="btn btn-custom-primary">Ingresar</button>
+              <button type="button" class="btn btn-custom-secondary" (click)="openRegister()">Crear Cuenta</button>
+            </div>
+          </form>
+
+          <div *ngIf="isLoginFailed" class="alert alert-danger mt-3 text-center p-1 small">
+            {{ errorMessage }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 d-flex justify-content-center order-1 order-md-2 mb-4 mb-md-0">
+        <div class="frases-container animate-fade-in">
+          <img src="assets/images/cartel-frases.png" 
+               alt="Frases del picante" 
+               class="img-fluid cartel-img">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <button class="btn-help-float" (click)="toggleHelp()">
+    <i class="bi bi-question-lg"></i>
+  </button>
+
+  <div class="modal-overlay" *ngIf="showHelpModal">
+    <div class="glass-card modal-card">
+      <h3 class="text-danger fw-bold">Ayuda</h3>
+      <p>Contacta a soporte:</p>
+      <p class="fw-bold">elpicanterest@gmail.com</p>
+      <button class="btn btn-danger rounded-pill w-100 mt-3" (click)="toggleHelp()">Cerrar</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" *ngIf="showRegisterModal">
+    <div class="glass-card modal-card">
+      <h3 class="text-danger fw-bold mb-3">Nueva Cuenta</h3>
+      <form (ngSubmit)="onRegister()"><!-- Input Usuario -->
+        <div class="mb-3 text-start">
+          <label class="small text-muted ms-2">Nombre de Usuario</label>
+          <input type="text" class="form-control rounded-pill" 
+                 placeholder="Ej: chef_carlos" 
+                 [(ngModel)]="form.username" name="regUser" required>
+        </div>
+
+        <!-- Input Contraseña -->
+        <div class="mb-3 text-start">
+          <label class="small text-muted ms-2">Contraseña</label>
+          <input type="password" class="form-control rounded-pill" 
+                 placeholder="******" 
+                 [(ngModel)]="form.password" name="regPass" required>
+        </div>
+
+        <!-- NUEVO: SELECTOR DE ROL -->
+        <div class="mb-4 text-start">
+            <label class="small text-muted ms-2">Selecciona tu Cargo</label>
+            <select class="form-select rounded-pill text-center fw-bold text-danger border-danger" 
+                    [(ngModel)]="form.role" name="regRole">
+                <option value="mozo">🤵 Mozo / Atención</option>
+                <option value="cocina">👨‍🍳 Cocina / Chef</option>
+                <option value="admin">🔐 Administrador</option>
+            </select>
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-danger rounded-pill">Registrarme</button>
+          <button type="button" class="btn btn-outline-secondary rounded-pill" (click)="closeRegister()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" *ngIf="showVerifyModal">
+    <div class="glass-card modal-card">
+      <h3 class="text-success fw-bold">Verificar</h3>
+      <p class="small">Ingresa el código enviado:</p>
+      <input type="text" class="form-control rounded-pill text-center mb-3 fs-4" #codeInput>
+      <button class="btn btn-success w-100 rounded-pill" (click)="onVerify(codeInput.value)">Validar</button>
+    </div>
+  </div>
+
+</div>
