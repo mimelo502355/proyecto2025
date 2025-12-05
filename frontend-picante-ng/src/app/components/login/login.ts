@@ -32,26 +32,44 @@ export class LoginComponent {
   private authService = inject(AuthService);
   private router = inject(Router);
 
-  // ==========================================
-  // 1. LÓGICA DE LOGIN
-  // ==========================================
-  onSubmit(): void {
+// ... dentro de la clase LoginComponent ...
+
+onSubmit(): void {
     const { username, password } = this.form;
 
     this.authService.login({ username, password }).subscribe({
-      next: (data: any) => { 
-        console.log('✅ Login exitoso:', data);
-        this.isLoginFailed = false;
-        // Guardar token si fuera necesario aquí (usualmente lo hace el servicio)
-        this.router.navigate(['/home']); 
-      },
-      error: (err: any) => { 
-        console.error('❌ Error login:', err);
-        this.errorMessage = 'Usuario o contraseña incorrectos';
-        this.isLoginFailed = true;
-      }
+        next: (data: any) => { 
+            this.isLoginFailed = false;
+
+            // ------------------------------------------
+            // 🚀 SOLUCIÓN FINAL DE TIMING 
+            // ------------------------------------------
+            setTimeout(() => {
+                const roles = this.authService.getRoles();
+                console.log('✅ Roles leídos justo antes de navegar:', roles);
+
+                if (this.authService.isSuperAdmin() || this.authService.hasRole('ROLE_ADMIN')) {
+                    // 1. ADMIN Y SUPER ADMIN van a la misma ruta de gestión
+                    this.router.navigate(['/admin-panel']); 
+                } else if (this.authService.hasRole('ROLE_COCINA')) {
+                    // 2. COCINERO va a su monitor
+                    this.router.navigate(['/cocina']); 
+                } else if (this.authService.hasRole('ROLE_MOZO')) {
+                    // 3. MOZO va al mapa de mesas
+                    this.router.navigate(['/mesas']); 
+                } else {
+                    // 4. Fallback si no tiene rol conocido
+                    this.router.navigate(['/home']); 
+                }
+            }, 50); // Damos 50ms para que localStorage escriba
+
+        },
+        error: (err: any) => { 
+            // ... (lógica de error) ...
+        }
     });
-  }
+}
+// ...
 
   // ==========================================
   // 2. LÓGICA DE REGISTRO (SOLICITUD)

@@ -1,0 +1,93 @@
+/* --- ESTILOS BASE Y FONDO --- */
+.super-admin-container {
+    /* Fondo oscuro moderno */
+    background-color: #212529; 
+    color: #f8f9fa; /* Color de texto blanco/claro */
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.admin-header h1 {
+    color: #ffc107; /* Amarillo para el título principal */
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+/* --- ESTILOS DEL CONTENEDOR DE TARJETAS (FLEXBOX) --- */
+.dashboard-cards-container {
+    /* Usamos Flexbox para alinear y distribuir las tarjetas */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    gap: 30px; /* Espacio entre las tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se apilen en pantallas pequeñas */
+    max-width: 1200px; /* Ancho máximo del dashboard */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+}
+
+/* --- ESTILOS DE CADA TARJETA --- */
+.admin-card {
+    background-color: #2c3034; /* Gris ligeramente más claro que el fondo */
+    border-radius: 12px;
+    padding: 30px;
+    width: 350px; /* Ancho fijo para las tarjetas */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra elegante */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Flexbox para contenido dentro de la tarjeta */
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Efecto hover */
+.admin-card:hover {
+    transform: translateY(-5px); /* Se levanta un poco */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.admin-card h2 {
+    font-size: 1.8em;
+    margin-top: 0;
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+}
+
+/* Colores específicos para cada tarjeta */
+.user-management h2 { border-bottom-color: #dc3545; } /* Rojo */
+.restaurant-status h2 { border-bottom-color: #ffc107; } /* Amarillo */
+
+/* --- ESTILOS DE BOTONES --- */
+.action-button {
+    margin-top: auto; /* Empuja el botón hacia abajo si el contenido varía */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.primary-button {
+    background-color: #dc3545; /* Rojo de acción (Usuarios) */
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+.secondary-button {
+    background-color: #ffc107; /* Amarillo de advertencia (Restaurante) */
+    color: #212529;
+}
+
+.secondary-button:hover {
+    background-color: #e0a800;
+    transform: translateY(-1px);
+}

@@ -1,0 +1,96 @@
+<div class="p-6 bg-gray-50 min-h-screen">
+    <header class="mb-8 flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
+        <h1 class="text-3xl font-extrabold text-gray-800">
+            Monitor de Pedidos - Cocina (RF-13)
+        </h1>
+        <a [routerLink]="['/login']" class="text-sm px-4 py-2 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition duration-150">
+            Cerrar Sesión
+        </a>
+    </header>
+
+    <!-- Indicador de Pedidos Pendientes -->
+    <div class="mb-6 p-4 rounded-lg bg-red-100 text-red-800 font-semibold shadow-inner">
+        🚨 Hay <span class="text-2xl font-bold">{{ pendingOrders().length }}</span> Pedidos PENDIENTES esperando ser iniciados.
+    </div>
+
+    <!-- Layout de Columnas: PENDIENTE vs EN PREPARACIÓN -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- COLUMNA 1: PEDIDOS PENDIENTES -->
+        <div class="column bg-gray-200 p-4 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold mb-4 text-center text-red-700">
+                PENDIENTES
+            </h2>
+            <div *ngIf="pendingOrders().length === 0" class="text-center text-gray-500 py-10">
+                🎉 No hay pedidos pendientes. ¡Excelente trabajo!
+            </div>
+
+            <!-- Lista de Pedidos PENDIENTES -->
+            <div *ngFor="let order of pendingOrders()" 
+                 [ngClass]="getCardClass(order)"
+                 class="order-card p-4 rounded-lg mb-4 border-l-4 transition duration-300 shadow">
+                
+                <div class="flex justify-between items-start mb-2">
+                    <span class="text-lg font-bold text-gray-800">MESA #{{ order.mesaId }}</span>
+                    <span class="text-sm font-medium" [class.text-red-600]="getCardClass(order).includes('border-red')">
+                        ⏰ {{ getTimeElapsed(order.tiempoRecepcion) }}
+                    </span>
+                </div>
+
+                <ul class="list-disc ml-5 text-gray-700 mb-3">
+                    <li *ngFor="let item of order.items" class="text-sm">
+                        <span class="font-bold">{{ item.quantity }}x</span> {{ item.name }}
+                        <span *ngIf="item.notes" class="text-xs text-blue-600 italic ml-2">
+                            * {{ item.notes }}
+                        </span>
+                    </li>
+                </ul>
+
+                <button 
+                    (click)="changeOrderStatus(order.id, 'EN_PREPARACION')"
+                    class="w-full py-2 mt-2 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition"
+                >
+                    ▶️ Iniciar Preparación
+                </button>
+            </div>
+        </div>
+
+        <!-- COLUMNA 2: PEDIDOS EN PREPARACIÓN -->
+        <div class="column bg-gray-200 p-4 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold mb-4 text-center text-orange-700">
+                EN PREPARACIÓN
+            </h2>
+            <div *ngIf="inPreparationOrders().length === 0" class="text-center text-gray-500 py-10">
+                ¡Aún no se ha iniciado ningún pedido!
+            </div>
+
+            <!-- Lista de Pedidos EN PREPARACIÓN -->
+            <div *ngFor="let order of inPreparationOrders()" 
+                 class="order-card p-4 rounded-lg mb-4 border-l-4 border-orange-500 bg-white transition duration-300 shadow">
+                
+                <div class="flex justify-between items-start mb-2">
+                    <span class="text-lg font-bold text-gray-800">MESA #{{ order.mesaId }}</span>
+                    <span class="text-sm font-medium text-gray-600">
+                        En curso: {{ getTimeElapsed(order.tiempoRecepcion) }}
+                    </span>
+                </div>
+
+                <ul class="list-disc ml-5 text-gray-700 mb-3">
+                    <li *ngFor="let item of order.items" class="text-sm">
+                        <span class="font-bold">{{ item.quantity }}x</span> {{ item.name }}
+                        <span *ngIf="item.notes" class="text-xs text-blue-600 italic ml-2">
+                            * {{ item.notes }}
+                        </span>
+                    </li>
+                </ul>
+
+                <button 
+                    (click)="changeOrderStatus(order.id, 'LISTO')"
+                    class="w-full py-2 mt-2 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition"
+                >
+                    ✅ Pedido Listo para Entregar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

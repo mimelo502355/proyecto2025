@@ -1,0 +1,89 @@
+<!-- Estructura del Modal de Toma de Pedidos -->
+<div class="modal-backdrop" (click)="close()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        
+        <header class="flex justify-between items-center p-4 border-b">
+            <h2 class="text-2xl font-bold text-gray-800">Mesa {{ mesaId }} - Nuevo Pedido</h2>
+            <button (click)="close()" class="text-gray-500 hover:text-gray-900 text-3xl leading-none">&times;</button>
+        </header>
+
+        <div class="body-grid">
+            
+            <!-- SECCIÓN IZQUIERDA: MENÚ Y CATEGORÍAS (RF-08, RF-25) -->
+            <div class="menu-section">
+                <div class="category-tabs">
+                    <!-- Iterar sobre las categorías de productos (Ej. Ceviches, Bebidas) -->
+                    <button 
+                        *ngFor="let cat of categories" 
+                        (click)="selectCategory(cat.id)"
+                        [class.active]="selectedCategory() === cat.id"
+                    >
+                        {{ cat.name }}
+                    </button>
+                </div>
+
+                <div class="product-list">
+                    <!-- Mostrar productos de la categoría seleccionada -->
+                    <div 
+                        *ngFor="let product of filteredProducts()" 
+                        class="product-card"
+                        (click)="addProductToOrder(product)"
+                    >
+                        <span class="product-name">{{ product.name }}</span>
+                        <span class="product-price">S/. {{ product.price | number:'1.2-2' }}</span>
+                        <!-- Botón para añadir nota de preparación (RF-09) -->
+                        <button (click)="$event.stopPropagation(); addNote(product.id)" class="note-btn">
+                            <i class="fas fa-sticky-note"></i> Nota
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN DERECHA: PEDIDO ACTUAL (RF-06, RF-10, RF-11) -->
+            <div class="order-section">
+                <h3 class="text-xl font-semibold mb-3">Tu Comanda</h3>
+                
+                <div class="order-items-list">
+                    <div *ngIf="orderItems.length === 0" class="text-center text-gray-500 py-10">
+                        Selecciona un producto del menú para empezar.
+                    </div>
+
+                    <div *ngFor="let item of orderItems(); let i = index" class="order-item">
+                        <div class="item-details">
+                            <span class="item-qty">
+                                <!-- Botón para modificar cantidad (RF-10) -->
+                                <button (click)="changeQuantity(i, -1)" [disabled]="item.quantity <= 1">-</button>
+                                {{ item.quantity }}x
+                                <button (click)="changeQuantity(i, 1)">+</button>
+                            </span>
+                            <span class="item-name">{{ item.name }}</span>
+                            <button (click)="removeItem(i)" class="remove-btn">
+                                <!-- Botón para eliminar producto (RF-11) -->
+                                &times;
+                            </button>
+                        </div>
+                        <p *ngIf="item.notes" class="item-notes">
+                            * {{ item.notes }}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="order-summary mt-auto pt-4 border-t">
+                    <div class="flex justify-between font-bold text-lg mb-2">
+                        <span>Total:</span>
+                        <span>S/. {{ total() | number:'1.2-2' }}</span>
+                    </div>
+                    
+                    <!-- Botón para enviar pedido a cocina (RF-12) -->
+                    <button 
+                        (click)="sendOrderToKitchen()" 
+                        [disabled]="orderItems.length === 0"
+                        class="btn-send-order"
+                    >
+                        Enviar Pedido a Cocina (RF-12)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
