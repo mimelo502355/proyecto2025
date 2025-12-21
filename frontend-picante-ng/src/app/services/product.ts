@@ -2,13 +2,18 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+export interface Category {
+  id: number;
+  name: string;
+}
+
 export interface Product {
   id?: number;
   name: string;
   price: number;
   description: string;
   available: boolean;
-  category?: any;
+  category?: Category;
 }
 
 @Injectable({
