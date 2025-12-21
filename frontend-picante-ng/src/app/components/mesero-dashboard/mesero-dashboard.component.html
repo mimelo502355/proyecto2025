@@ -1,55 +1,220 @@
-<div class="container-fluid p-4">
-  <h1 class="mb-4 text-center">Dashboard de Mesero</h1>
-
-  <!-- Sección SALÓN -->
-  <div class="mb-5">
-    <h2 class="section-title text-success"><i class="bi bi-shop"></i> Salón</h2>
-
-    <div class="table-grid">
-      <div *ngFor="let table of salonTables; trackBy: trackByTableId" class="table-card"
-        [ngClass]="{'occupied': table.status === 'OCCUPIED', 'available': table.status === 'AVAILABLE'}"
-        (click)="selectTable(table)">
-
-        <div class="table-header">
-          <span class="table-name">{{ table.name }}</span>
-          <span class="capacity"><i class="bi bi-people-fill"></i> {{ table.capacity }}</span>
+<div class="dashboard-wrapper min-vh-100 bg-light">
+  <!-- Barra de Navegación -->
+  <nav class="navbar navbar-dark bg-danger bg-gradient shadow-sm px-4 py-3 mb-4">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1 fw-bold">
+        <i class="bi bi-shop me-2"></i> El Picante - Mesero
+      </span>
+      <div class="d-flex align-items-center text-white">
+        <div class="me-3 text-end d-none d-sm-block">
+          <small class="d-block opacity-75">Sesión de:</small>
+          <span class="fw-bold">{{ currentUser?.username || 'Mesero' }}</span>
         </div>
+        <div
+          class="avatar bg-white text-danger fw-bold rounded-circle me-3 d-flex align-items-center justify-content-center shadow-sm"
+          style="width: 40px; height: 40px;">
+          {{ (currentUser?.username || 'M')[0].toUpperCase() }}
+        </div>
+        <button (click)="logout()" class="btn btn-outline-light btn-sm rounded-pill px-3 shadow-sm">
+          <i class="bi bi-box-arrow-right me-1"></i> Salir
+        </button>
+      </div>
+    </div>
+  </nav>
 
-        <div class="table-body">
-          <div *ngIf="table.status === 'AVAILABLE'" class="status-badge available">
-            DISPONIBLE
+  <div class="container-fluid px-4 pb-5">
+    <!-- SECCIÓN SALÓN -->
+    <div class="mb-5">
+      <div class="d-flex align-items-center mb-3">
+        <h2 class="h4 mb-0 fw-bold border-start border-4 border-success ps-3">SALÓN</h2>
+      </div>
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
+        <div *ngFor="let table of salonTables" class="col">
+          <div (click)="selectTable(table)" class="card h-100 table-card border-0 shadow-sm" [ngClass]="{
+                            'border-top border-4 border-secondary opacity-75': table.status === 'AVAILABLE',
+                            'border-top border-4 border-warning': table.status === 'OCCUPIED' || table.status === 'READY_TO_KITCHEN',
+                            'border-top border-4 border-primary': table.status === 'WAITING_KITCHEN' || table.status === 'PREPARING',
+                            'border-top border-4 border-success animate-pulse': table.status === 'READY',
+                            'border-top border-4 border-info': table.status === 'SERVING',
+                            'border-top border-4 border-danger': table.status === 'WAITING_PAYMENT'
+                         }">
+            <div class="card-body p-3 text-center">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="fw-bold text-muted small">{{ table.name }}</span>
+                <span class="small text-muted"><i class="bi bi-people"></i> {{ table.capacity }}</span>
+              </div>
+
+              <div class="status-icon py-2">
+                <i class="bi h2" [ngClass]="{
+                                    'bi-dash-circle text-muted': table.status === 'AVAILABLE',
+                                    'bi-pencil-square text-warning': table.status === 'OCCUPIED',
+                                    'bi-send text-warning': table.status === 'READY_TO_KITCHEN',
+                                    'bi-clock-history text-primary': table.status === 'WAITING_KITCHEN',
+                                    'bi-fire text-primary': table.status === 'PREPARING',
+                                    'bi-bell-fill text-success': table.status === 'READY',
+                                    'bi-check-circle-fill text-info': table.status === 'SERVING',
+                                    'bi-cash-coin text-danger animate-bounce': table.status === 'WAITING_PAYMENT'
+                                }"></i>
+              </div>
+
+              <span class="badge rounded-pill mt-2 w-100" [ngClass]="{
+                                'bg-secondary': table.status === 'AVAILABLE',
+                                'bg-warning text-dark': table.status === 'OCCUPIED' || table.status === 'READY_TO_KITCHEN',
+                                'bg-primary': table.status === 'WAITING_KITCHEN' || table.status === 'PREPARING',
+                                'bg-success': table.status === 'READY',
+                                'bg-info': table.status === 'SERVING',
+                                'bg-danger': table.status === 'WAITING_PAYMENT'
+                            }">
+                {{ table.status === 'READY' ? '¡LISTO!' : (table.status === 'SERVING' ? 'SIRVIENDO' : (table.status ===
+                'WAITING_PAYMENT' ? 'POR PAGAR' : table.status)) }}
+              </span>
+
+              <div *ngIf="table.occupiedAt" class="timer-display mt-2 small fw-bold"
+                [ngClass]="getTimerClass(table.occupiedAt)">
+                <i class="bi bi-stopwatch"></i> {{ getElapsedTime(table.occupiedAt) }}
+              </div>
+            </div>
           </div>
-          <div *ngIf="table.status === 'OCCUPIED'" class="timer-display" [ngClass]="getTimerClass(table.occupiedAt)">
-            <i class="bi bi-stopwatch"></i> {{ getElapsedTime(table.occupiedAt) }}
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN PATIO -->
+    <div class="mb-5">
+      <div class="d-flex align-items-center mb-3">
+        <h2 class="h4 mb-0 fw-bold border-start border-4 border-primary ps-3">PATIO</h2>
+      </div>
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
+        <div *ngFor="let table of patioTables" class="col">
+          <div (click)="selectTable(table)" class="card h-100 table-card border-0 shadow-sm" [ngClass]="{
+                            'border-top border-4 border-success': table.status === 'READY',
+                            'border-top border-4 border-secondary': table.status === 'AVAILABLE',
+                            'border-top border-4 border-danger': table.status === 'WAITING_PAYMENT'}">
+            <div class="card-body p-3 text-center">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="fw-bold text-muted small">{{ table.name }}</span>
+                <span class="small text-muted"><i class="bi bi-people"></i> {{ table.capacity }}</span>
+              </div>
+              <span class="badge rounded-pill mb-2" [ngClass]="{
+                                'bg-secondary': table.status === 'AVAILABLE',
+                                'bg-danger': table.status === 'WAITING_PAYMENT',
+                                'bg-warning': table.status !== 'AVAILABLE' && table.status !== 'WAITING_PAYMENT'
+                            }">{{ table.status }}</span>
+              <div *ngIf="table.occupiedAt" class="timer-display small fw-bold"
+                [ngClass]="getTimerClass(table.occupiedAt)">
+                <i class="bi bi-stopwatch"></i> {{ getElapsedTime(table.occupiedAt) }}
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <hr>
+  <!-- MODAL DE PRODUCTOS -->
+  <div *ngIf="showProductModal" class="modal-overlay d-flex align-items-center justify-content-center shadow-lg">
+    <div class="modal-card bg-white rounded-4 shadow overflow-hidden d-flex flex-column animate-slide-up"
+      style="width: 95%; max-width: 600px; max-height: 90vh;">
+      <div class="modal-header bg-danger text-white p-3 d-flex justify-content-between align-items-center">
+        <h5 class="mb-0 fw-bold"><i class="bi bi-cart-plus me-2"></i> Pedido - {{ selectedTable?.name }}</h5>
+        <button (click)="closeProductModal()" class="btn-close btn-close-white shadow-none"></button>
+      </div>
 
-  <!-- Sección PATIO -->
-  <div>
-    <h2 class="section-title text-primary"><i class="bi bi-brightness-high"></i> Patio</h2>
-    <div class="table-grid">
-      <div *ngFor="let table of patioTables; trackBy: trackByTableId" class="table-card"
-        [ngClass]="{'occupied': table.status === 'OCCUPIED', 'available': table.status === 'AVAILABLE'}"
-        (click)="selectTable(table)">
-
-        <div class="table-header">
-          <span class="table-name">{{ table.name }}</span>
-          <span class="capacity"><i class="bi bi-people-fill"></i> {{ table.capacity }}</span>
+      <div class="modal-body p-0 overflow-hidden d-flex flex-column">
+        <!-- Categorías -->
+        <div class="category-strip d-flex p-3 bg-light border-bottom overflow-auto"
+          style="gap: 10px; scrollbar-width: none;">
+          <button *ngFor="let cat of categories" (click)="selectCategory(cat)"
+            class="btn rounded-pill px-3 py-1 fw-bold text-nowrap"
+            [ngClass]="selectedCategory === cat ? 'btn-danger shadow-sm' : 'btn-white border text-secondary'">
+            {{ cat }}
+          </button>
         </div>
 
-        <div class="table-body">
-          <div *ngIf="table.status === 'AVAILABLE'" class="status-badge available">
-            DISPONIBLE
-          </div>
-          <div *ngIf="table.status === 'OCCUPIED'" class="timer-display" [ngClass]="getTimerClass(table.occupiedAt)">
-            <i class="bi bi-stopwatch"></i> {{ getElapsedTime(table.occupiedAt) }}
+        <!-- Lista de Productos -->
+        <div class="product-scroller p-3 overflow-auto flex-grow-1">
+          <div *ngFor="let p of groupedProducts[selectedCategory]"
+            class="product-row d-flex align-items-center justify-content-between p-3 mb-2 rounded-3 border bg-white hover-shadow transition">
+            <div class="me-3">
+              <div class="fw-bold text-dark">{{ p.name }}</div>
+              <div class="text-muted small mb-1">{{ p.price | currency:'PEN':'S/. ' }}</div>
+            </div>
+
+            <div class="d-flex align-items-center bg-light rounded-pill p-1">
+              <button (click)="removeFromOrder(p)" [disabled]="getQuantity(p.id) === 0"
+                class="btn btn-sm btn-white rounded-circle shadow-sm" style="width:30px;height:30px;"><i
+                  class="bi bi-dash"></i></button>
+              <span class="mx-3 fw-bold">{{ getQuantity(p.id) }}</span>
+              <button (click)="addToOrder(p)" class="btn btn-sm btn-danger rounded-circle shadow-sm text-white"
+                style="width:30px;height:30px;"><i class="bi bi-plus"></i></button>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div class="modal-footer p-3 bg-light border-top d-flex justify-content-between align-items-center">
+        <div class="text-muted small">
+          Confirmados: <span class="fw-bold text-danger">{{ getTotalItems() }}</span> unidades
+        </div>
+        <div class="d-flex gap-2">
+          <button (click)="closeProductModal()" class="btn btn-link text-muted text-decoration-none">Cerrar</button>
+          <button (click)="confirmOrder()" [disabled]="getTotalItems() === 0"
+            class="btn btn-danger px-4 rounded-pill fw-bold shadow-sm">
+            CONFIRMAR PEDIDO
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE COMPROBANTE / CAJA -->
+  <div *ngIf="showBillModal" class="modal-overlay d-flex align-items-center justify-content-center shadow-lg">
+    <div class="bill-card bg-white rounded-4 shadow overflow-hidden animate-slide-up"
+      style="width: 95%; max-width: 450px;">
+      <div class="modal-header bg-dark text-white p-3 d-flex justify-content-between align-items-center no-print">
+        <h5 class="mb-0 fw-bold"><i class="bi bi-receipt me-2"></i> Comprobante de Pago</h5>
+        <button (click)="closeBillModal()" class="btn-close btn-close-white shadow-none"></button>
+      </div>
+
+      <div class="bill-content p-4" id="printable-bill">
+        <div class="text-center mb-4">
+          <h3 class="fw-bold mb-0">EL PICANTE</h3>
+          <p class="text-muted small mb-0">RUC: 20123456789</p>
+          <p class="text-muted small">Calle Los Olivos 123 - Lima</p>
+          <hr class="my-2 border-dark opacity-25">
+          <div class="d-flex justify-content-between px-2 small">
+            <span>Mesa: {{ selectedTable?.name }}</span>
+            <span>Fecha: {{ now | date:'dd/MM/yyyy HH:mm' }}</span>
+          </div>
+          <hr class="my-2 border-dark opacity-25">
+        </div>
+
+        <div class="product-details mb-4">
+          <div *ngFor="let item of currentOrder?.items" class="d-flex justify-content-between mb-1 small">
+            <span>{{ item.quantity }} x {{ item.productName }}</span>
+            <span class="fw-bold">S/. {{ item.subtotal | number:'1.2-2' }}</span>
+          </div>
+        </div>
+
+        <hr class="my-2 border-dark opacity-25">
+        <div class="d-flex justify-content-between h4 fw-bold mb-0 py-2">
+          <span>TOTAL:</span>
+          <span class="text-danger">S/. {{ currentOrder?.totalAmount | number:'1.2-2' }}</span>
+        </div>
+        <hr class="my-2 border-dark opacity-25">
+
+        <div class="text-center mt-3 small text-muted">
+          <p>¡Gracias por su preferencia!</p>
+        </div>
+      </div>
+
+      <div class="modal-footer p-3 bg-light border-top d-flex gap-2 no-print">
+        <button (click)="printBill()" class="btn btn-outline-dark flex-grow-1 rounded-pill">
+          <i class="bi bi-printer me-1"></i> Imprimir
+        </button>
+        <button *ngIf="isAdmin()" (click)="confirmPayment()" class="btn btn-success flex-grow-1 rounded-pill fw-bold">
+          <i class="bi bi-check-lg me-1"></i> CONFIRMAR PAGO
+        </button>
       </div>
     </div>
   </div>
