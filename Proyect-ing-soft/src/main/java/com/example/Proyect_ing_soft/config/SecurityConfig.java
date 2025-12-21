@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.Customizer; 
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -53,28 +53,27 @@ public class SecurityConfig {
     }
 
     @Bean
+    @SuppressWarnings("deprecation")
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return org.springframework.security.crypto.password.NoOpPasswordEncoder.getInstance();
     }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .cors(Customizer.withDefaults()) // Usar configuración CORS por defecto (busca el Bean de abajo)
-            .csrf(csrf -> csrf.disable())
-            .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
-            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .authorizeHttpRequests(auth -> 
-                auth
-                // Permitir acceso público a autenticación y endpoints de prueba
-                .requestMatchers(new AntPathRequestMatcher("/api/auth/**")).permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/api/test/**")).permitAll()
-                // Swagger (opcional, pero útil tenerlo listo)
-                .requestMatchers(new AntPathRequestMatcher("/v3/api-docs/**")).permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**")).permitAll()
-                // Todo lo demás requiere token
-                .anyRequest().authenticated()
-            );
+                .cors(Customizer.withDefaults()) // Usar configuración CORS por defecto (busca el Bean de abajo)
+                .csrf(csrf -> csrf.disable())
+                .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(auth -> auth
+                        // Permitir acceso público a autenticación y endpoints de prueba
+                        .requestMatchers(new AntPathRequestMatcher("/api/auth/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/test/**")).permitAll()
+                        // Swagger (opcional, pero útil tenerlo listo)
+                        .requestMatchers(new AntPathRequestMatcher("/v3/api-docs/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**")).permitAll()
+                        // Todo lo demás requiere token
+                        .anyRequest().authenticated());
 
         http.authenticationProvider(authenticationProvider());
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
@@ -86,7 +85,7 @@ public class SecurityConfig {
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         // AllowedOriginPatterns es más flexible que AllowedOrigins
-        configuration.setAllowedOriginPatterns(Arrays.asList("*")); 
+        configuration.setAllowedOriginPatterns(Arrays.asList("*"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "x-auth-token"));
         configuration.setAllowCredentials(true);

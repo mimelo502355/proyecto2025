@@ -1,0 +1,56 @@
+<div class="container-fluid p-4">
+  <h1 class="mb-4 text-center">Dashboard de Mesero</h1>
+
+  <!-- Sección SALÓN -->
+  <div class="mb-5">
+    <h2 class="section-title text-success"><i class="bi bi-shop"></i> Salón</h2>
+
+    <div class="table-grid">
+      <div *ngFor="let table of salonTables; trackBy: trackByTableId" class="table-card"
+        [ngClass]="{'occupied': table.status === 'OCCUPIED', 'available': table.status === 'AVAILABLE'}"
+        (click)="selectTable(table)">
+
+        <div class="table-header">
+          <span class="table-name">{{ table.name }}</span>
+          <span class="capacity"><i class="bi bi-people-fill"></i> {{ table.capacity }}</span>
+        </div>
+
+        <div class="table-body">
+          <div *ngIf="table.status === 'AVAILABLE'" class="status-badge available">
+            DISPONIBLE
+          </div>
+          <div *ngIf="table.status === 'OCCUPIED'" class="timer-display" [ngClass]="getTimerClass(table.occupiedAt)">
+            <i class="bi bi-stopwatch"></i> {{ getElapsedTime(table.occupiedAt) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Sección PATIO -->
+  <div>
+    <h2 class="section-title text-primary"><i class="bi bi-brightness-high"></i> Patio</h2>
+    <div class="table-grid">
+      <div *ngFor="let table of patioTables; trackBy: trackByTableId" class="table-card"
+        [ngClass]="{'occupied': table.status === 'OCCUPIED', 'available': table.status === 'AVAILABLE'}"
+        (click)="selectTable(table)">
+
+        <div class="table-header">
+          <span class="table-name">{{ table.name }}</span>
+          <span class="capacity"><i class="bi bi-people-fill"></i> {{ table.capacity }}</span>
+        </div>
+
+        <div class="table-body">
+          <div *ngIf="table.status === 'AVAILABLE'" class="status-badge available">
+            DISPONIBLE
+          </div>
+          <div *ngIf="table.status === 'OCCUPIED'" class="timer-display" [ngClass]="getTimerClass(table.occupiedAt)">
+            <i class="bi bi-stopwatch"></i> {{ getElapsedTime(table.occupiedAt) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -19,13 +19,12 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        
-        // 1. Buscamos el usuario en la Base de Datos
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado con nombre: " + username));
 
-        // 2. Convertimos tu usuario de BD (Entity) a un usuario de Seguridad (UserDetails)
-        //    usando el método 'build' que creamos en el paso anterior.
+        System.out.println("🔥🔥 DEBUG LOGIN - Usuario: " + username);
+        System.out.println("🔥🔥 DEBUG LOGIN - Password en BD: " + user.getPassword());
+
         return CustomUserDetails.build(user);
     }
 }

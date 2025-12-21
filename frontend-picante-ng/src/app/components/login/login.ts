@@ -8,22 +8,22 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './login.html', 
-  styleUrl: './login.css'      
+  templateUrl: './login.html',
+  styleUrl: './login.css'
 })
 export class LoginComponent {
   // --- VARIABLES DE ESTADO ---
   showHelpModal: boolean = false;
   showRegisterModal: boolean = false;
   showVerifyModal: boolean = false;
-  
+
   // Datos del formulario
   form: any = {
     username: '',
     password: '',
     role: 'mozo' // Valor por defecto IMPORTANTE para el select
   };
-  
+
   // Estado del login
   isLoginFailed = false;
   errorMessage = '';
@@ -39,13 +39,19 @@ export class LoginComponent {
     const { username, password } = this.form;
 
     this.authService.login({ username, password }).subscribe({
-      next: (data: any) => { 
+      next: (data: any) => {
         console.log('✅ Login exitoso:', data);
         this.isLoginFailed = false;
-        // Guardar token si fuera necesario aquí (usualmente lo hace el servicio)
-        this.router.navigate(['/home']); 
+
+        // Redirección dinámica según rol
+        const roles = data.roles || [];
+        if (roles.includes('ROLE_COCINA')) {
+          this.router.navigate(['/chef']);
+        } else {
+          this.router.navigate(['/mesero-dashboard']);
+        }
       },
-      error: (err: any) => { 
+      error: (err: any) => {
         console.error('❌ Error login:', err);
         this.errorMessage = 'Usuario o contraseña incorrectos';
         this.isLoginFailed = true;
@@ -63,18 +69,18 @@ export class LoginComponent {
       next: (response: any) => {
         // La respuesta es TEXTO del backend ("Solicitud enviada...")
         console.log("✅ Respuesta del servidor:", response);
-        
+
         // Mensaje claro para el usuario
         alert("¡Solicitud enviada con éxito!\n\n📧 El código de verificación ha sido enviado al correo del ADMINISTRADOR.\n\nPor favor, contacta al admin y pídele el código para continuar.");
-        
+
         // Cerramos registro y abrimos verificación
         this.showRegisterModal = false;
-        this.showVerifyModal = true; 
+        this.showVerifyModal = true;
       },
       error: (err: any) => {
         // AQUÍ ARREGLAMOS EL "[object Object]"
         console.error("❌ Error en registro:", err);
-        
+
         let mensajeError = "Ocurrió un error desconocido.";
 
         if (err.error) {
@@ -86,7 +92,7 @@ export class LoginComponent {
             mensajeError = JSON.stringify(err.error); // Último recurso
           }
         } else if (err.message) {
-            mensajeError = err.message;
+          mensajeError = err.message;
         }
 
         alert("⚠️ No se pudo registrar: " + mensajeError);
@@ -110,9 +116,9 @@ export class LoginComponent {
       next: (data) => {
         alert("✅ ¡Cuenta verificada correctamente!\n\nAhora puedes iniciar sesión con tu contraseña.");
         this.showVerifyModal = false;
-        
+
         // Limpiamos SOLO la contraseña para que el usuario escriba la suya real
-        this.form.password = ''; 
+        this.form.password = '';
       },
       error: (err) => {
         console.error("❌ Error verificación:", err);
@@ -125,14 +131,14 @@ export class LoginComponent {
   // 4. CONTROL DE MODALES
   // ==========================================
   toggleHelp() { this.showHelpModal = !this.showHelpModal; }
-  
-  openRegister() { 
-    this.showRegisterModal = true; 
+
+  openRegister() {
+    this.showRegisterModal = true;
     // Reseteamos el form al abrir para que esté limpio (opcional)
     // this.form.username = '';
     // this.form.password = '';
     this.form.role = 'mozo';
   }
-  
+
   closeRegister() { this.showRegisterModal = false; }
 }

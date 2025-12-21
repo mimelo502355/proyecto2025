@@ -1,0 +1,87 @@
+.table-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.table-card {
+    border-radius: 12px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 2px solid transparent;
+}
+
+.table-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+}
+
+.table-card.available {
+    border-color: #28a745;
+}
+
+.table-card.occupied {
+    background-color: #fff3cd; /* Light yellow background base */
+}
+
+/* Header */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.table-name {
+    font-size: 1.2rem;
+}
+
+/* Body */
+.table-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+}
+
+.status-badge.available {
+    background-color: #28a745;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* Timer Styles */
+.timer-display {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.timer-orange {
+    background-color: #fd7e14; /* Naranja */
+    color: white;
+}
+
+.timer-red {
+    background-color: #dc3545; /* Rojo */
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

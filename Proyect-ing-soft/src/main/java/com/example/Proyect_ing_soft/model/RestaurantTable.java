@@ -12,9 +12,13 @@ public class RestaurantTable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true)
     private String name;
     private int capacity;
     private String status;
+
+    private java.time.LocalDateTime occupiedAt;
+    private java.time.LocalDateTime preparationAt;
 
     public RestaurantTable(String name, int capacity, String status) {
         this.name = name;
