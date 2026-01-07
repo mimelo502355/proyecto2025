@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
     // Al cargar, obtenemos el usuario del almacenamiento local
     this.currentUser = this.authService.getUser();
 
-    // Si no hay usuario logueado, lo devolvemos al Login
     if (!this.currentUser) {
       this.router.navigate(['/login']);
     }
