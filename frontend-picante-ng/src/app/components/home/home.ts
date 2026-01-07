@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule],
-  // IMPORTANTE: Verifica que estos nombres coincidan con tus archivos reales en esa carpeta
   templateUrl: './home.html', 
   styleUrl: './home.css'       
 })
