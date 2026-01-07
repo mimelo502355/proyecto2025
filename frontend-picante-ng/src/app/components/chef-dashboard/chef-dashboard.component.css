@@ -34,7 +34,6 @@
     font-weight: 800;
 }
 
-/* Chart Styles */
 .chart-container svg {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
 }
