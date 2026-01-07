@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
   private router = inject(Router);
 
   ngOnInit(): void {
-    // Al cargar, obtenemos el usuario del almacenamiento local
     this.currentUser = this.authService.getUser();
 
     if (!this.currentUser) {
