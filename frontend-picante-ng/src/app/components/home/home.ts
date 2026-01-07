@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../services/auth'; // Asegúrate de que la ruta apunte a tu auth.ts
+import { AuthService } from '../../services/auth'; 
 import { Router } from '@angular/router';
 
 @Component({
