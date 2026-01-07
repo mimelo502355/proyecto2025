@@ -1,3 +1,4 @@
+/* Cards */
 .card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 12px;
@@ -8,6 +9,7 @@
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
 }
 
+/* Badges */
 .badge {
     padding: 0.5rem 0.8rem;
     font-size: 0.75rem;
@@ -15,6 +17,7 @@
     border-radius: 6px;
 }
 
+/* Buttons */
 .btn {
     border-radius: 10px;
     letter-spacing: 1px;
@@ -25,19 +28,23 @@
     transform: scale(0.95);
 }
 
+/* Timer */
 .prep-timer {
     border: 1px dashed #dee2e6;
 }
 
+/* Digital style number */
 .display-5 {
     font-family: 'Courier New', monospace;
     font-weight: 800;
 }
 
-.chart-container svg {
+/* Chart (Angular encapsulation fix) */
+:host ::ng-deep .chart-container svg {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
 }
 
+/* Dots */
 .dot {
     display: inline-block;
     width: 10px;
@@ -45,6 +52,7 @@
     border-radius: 50%;
 }
 
+/* Soft background colors */
 .bg-soft-primary {
     background-color: #e7f1ff;
     color: #0d6efd;
@@ -60,6 +68,8 @@
     color: #0f5132;
 }
 
+/* SVG animation */
 circle {
     transition: stroke-dasharray 0.5s ease;
 }
+
