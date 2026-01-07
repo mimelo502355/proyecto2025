@@ -33,15 +33,10 @@
     border: 1px dashed #dee2e6;
 }
 
-/* Digital style number */
+/* Digital number style */
 .display-5 {
     font-family: 'Courier New', monospace;
     font-weight: 800;
-}
-
-/* Chart (Angular encapsulation fix) */
-:host ::ng-deep .chart-container svg {
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
 }
 
 /* Dots */
@@ -52,7 +47,7 @@
     border-radius: 50%;
 }
 
-/* Soft background colors */
+/* Soft colors */
 .bg-soft-primary {
     background-color: #e7f1ff;
     color: #0d6efd;
@@ -68,8 +63,7 @@
     color: #0f5132;
 }
 
-/* SVG animation */
+/* SVG animation inside component only */
 circle {
     transition: stroke-dasharray 0.5s ease;
 }
-
