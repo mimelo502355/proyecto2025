@@ -1,5 +1,80 @@
 /* Cards */
 .card {
+    .container-fluid {
+        background-color: var(--bg-body);
+        min-height: 100vh;
+    }
+
+    .chef-header {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-md) !important;
+        box-shadow: var(--glass-shadow);
+    }
+
+    .order-card {
+        border: none !important;
+        border-radius: var(--radius-md) !important;
+        background: white;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .order-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-card.border-primary {
+        border-top: 5px solid var(--primary) !important;
+    }
+
+    .order-card.border-warning {
+        border-top: 5px solid var(--warning) !important;
+    }
+
+    .order-card.border-success {
+        border-top: 5px solid var(--success) !important;
+    }
+
+    .card-header {
+        border-bottom: 1.5px solid rgba(0, 0, 0, 0.03) !important;
+        padding: 1.5rem !important;
+    }
+
+    .prep-timer {
+        background: #f8f9fa !important;
+        border-radius: var(--radius-sm) !important;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .display-5 {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        color: var(--secondary);
+    }
+
+    .btn-warning {
+        background-color: var(--warning);
+        border: none;
+        color: #725b10 !important;
+        border-radius: var(--radius-sm);
+    }
+
+    .btn-success {
+        background-color: var(--success);
+        border: none;
+        border-radius: var(--radius-sm);
+    }
+
+    .badge {
+        padding: 0.5rem 1rem !important;
+        border-radius: 50px !important;
+        font-weight: 600 !important;
+    }
+
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 12px;
 }

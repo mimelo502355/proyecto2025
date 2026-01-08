@@ -195,14 +195,19 @@ export class MeseroDashboardComponent implements OnInit, OnDestroy {
     private openProductModal(table: RestaurantTable): void {
         this.selectedTable = table;
         this.showProductModal = true;
+        console.log('MeseroDashboard: showProductModal set to true');
         this.tempOrder = {}; // Resetear pedido al abrir
         this.productService.getAllProducts().subscribe(
             prods => {
+                console.log('MeseroDashboard: Products received:', prods);
                 this.products = prods;
                 this.groupProductsByCategory(prods);
+                console.log('MeseroDashboard: Grouped Products:', this.groupedProducts);
+                console.log('MeseroDashboard: Categories:', this.categories);
                 // Seleccionar la primera categoría por defecto
                 if (this.categories.length > 0) {
                     this.selectedCategory = this.categories[0];
+                    console.log('MeseroDashboard: Selected Category:', this.selectedCategory);
                 }
             },
             err => console.error('Error loading products', err)
@@ -278,5 +283,3 @@ export class MeseroDashboardComponent implements OnInit, OnDestroy {
         return num < 10 ? '0' + num : num.toString();
     }
 }
-/ /   M e j o r a r   U I   d e l   d a s h b o a r d   d e l   m e s e r o  
- 

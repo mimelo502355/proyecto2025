@@ -585,7 +585,7 @@ VALUES ('S1', 4, 'AVAILABLE'),
     ('P19', 4, 'AVAILABLE'),
     ('P20', 4, 'AVAILABLE');
 
-INSERT INTO
+INSERT IGNORE INTO
     users (
         username,
         email,
@@ -637,5 +637,4 @@ WHERE
     u.username = 'chef1'
     AND r.name = 'ROLE_COCINA';
 
-SET FOREIGN_KEY_CHECKS = 1;- -   I n d i c e   p a r a   b u s q u e d a   d e   p r o d u c t o s  
- 
+SET FOREIGN_KEY_CHECKS = 1;
