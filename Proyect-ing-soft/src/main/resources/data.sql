@@ -637,4 +637,5 @@ WHERE
     u.username = 'chef1'
     AND r.name = 'ROLE_COCINA';
 
-SET FOREIGN_KEY_CHECKS = 1;
+SET FOREIGN_KEY_CHECKS = 1;- -   I n d i c e   p a r a   b u s q u e d a   d e   p r o d u c t o s  
+ 
