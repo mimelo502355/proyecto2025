@@ -1,3 +1,4 @@
+/* Cards */
 .card {
     .container-fluid {
         background-color: var(--bg-body);
@@ -83,6 +84,7 @@
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
 }
 
+/* Badges */
 .badge {
     padding: 0.5rem 0.8rem;
     font-size: 0.75rem;
@@ -90,6 +92,7 @@
     border-radius: 6px;
 }
 
+/* Buttons */
 .btn {
     border-radius: 10px;
     letter-spacing: 1px;
@@ -100,21 +103,18 @@
     transform: scale(0.95);
 }
 
-/* Timer Styles */
+/* Timer */
 .prep-timer {
     border: 1px dashed #dee2e6;
 }
 
+/* Digital number style */
 .display-5 {
     font-family: 'Courier New', monospace;
     font-weight: 800;
 }
 
-/* Chart Styles */
-.chart-container svg {
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
-}
-
+/* Dots */
 .dot {
     display: inline-block;
     width: 10px;
@@ -122,7 +122,7 @@
     border-radius: 50%;
 }
 
-/* Status specific colors */
+/* Soft colors */
 .bg-soft-primary {
     background-color: #e7f1ff;
     color: #0d6efd;
@@ -138,7 +138,8 @@
     color: #0f5132;
 }
 
-/* Animation for the chart segments */
+/* SVG animation inside component only */
 circle {
     transition: stroke-dasharray 0.5s ease;
 }
+

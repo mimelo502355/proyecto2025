@@ -4,8 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<!-- CAMBIO CRÍTICO: Usamos 3.2.3 en lugar de 4.0.1 -->
-		<!-- Esta versión es estable y funciona perfectamente con Java 17 -->
+	
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.3</version>
@@ -37,7 +36,6 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- 2. WEB Y VALIDACIÓN -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
