@@ -1,0 +1,5840 @@
+[
+  {
+    "id": 1,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": {
+      "id": 1,
+      "name": "Combinados Carretilleros"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": {
+      "id": 1,
+      "name": "Combinados Carretilleros"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": {
+      "id": 1,
+      "name": "Combinados Carretilleros"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": {
+      "id": 1,
+      "name": "Combinados Carretilleros"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": {
+      "id": 2,
+      "name": "Platos Extras"
+    }
+  },
+  {
+    "id": 6,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": {
+      "id": 2,
+      "name": "Platos Extras"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": {
+      "id": 2,
+      "name": "Platos Extras"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": {
+      "id": 2,
+      "name": "Platos Extras"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": {
+      "id": 3,
+      "name": "Frituras"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": {
+      "id": 3,
+      "name": "Frituras"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": {
+      "id": 7,
+      "name": "Ceviches"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": {
+      "id": 7,
+      "name": "Ceviches"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": {
+      "id": 7,
+      "name": "Ceviches"
+    }
+  },
+  {
+    "id": 14,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": {
+      "id": 7,
+      "name": "Ceviches"
+    }
+  },
+  {
+    "id": 15,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": {
+      "id": 6,
+      "name": "Cevichop en Copa"
+    }
+  },
+  {
+    "id": 16,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": {
+      "id": 6,
+      "name": "Cevichop en Copa"
+    }
+  },
+  {
+    "id": 17,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": {
+      "id": 6,
+      "name": "Cevichop en Copa"
+    }
+  },
+  {
+    "id": 18,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": {
+      "id": 8,
+      "name": "Causas"
+    }
+  },
+  {
+    "id": 19,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": {
+      "id": 8,
+      "name": "Causas"
+    }
+  },
+  {
+    "id": 20,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": {
+      "id": 8,
+      "name": "Causas"
+    }
+  },
+  {
+    "id": 21,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": {
+      "id": 9,
+      "name": "Arroces"
+    }
+  },
+  {
+    "id": 22,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": {
+      "id": 9,
+      "name": "Arroces"
+    }
+  },
+  {
+    "id": 23,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": {
+      "id": 9,
+      "name": "Arroces"
+    }
+  },
+  {
+    "id": 24,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": {
+      "id": 10,
+      "name": "Chicharrones y Jaleas"
+    }
+  },
+  {
+    "id": 25,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": {
+      "id": 10,
+      "name": "Chicharrones y Jaleas"
+    }
+  },
+  {
+    "id": 26,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": {
+      "id": 10,
+      "name": "Chicharrones y Jaleas"
+    }
+  },
+  {
+    "id": 27,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": {
+      "id": 10,
+      "name": "Chicharrones y Jaleas"
+    }
+  },
+  {
+    "id": 28,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": {
+      "id": 11,
+      "name": "Sudados y Parihuelas"
+    }
+  },
+  {
+    "id": 29,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": {
+      "id": 11,
+      "name": "Sudados y Parihuelas"
+    }
+  },
+  {
+    "id": 30,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": {
+      "id": 11,
+      "name": "Sudados y Parihuelas"
+    }
+  },
+  {
+    "id": 31,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": {
+      "id": 12,
+      "name": "Duos"
+    }
+  },
+  {
+    "id": 32,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": {
+      "id": 12,
+      "name": "Duos"
+    }
+  },
+  {
+    "id": 33,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": {
+      "id": 13,
+      "name": "Trios"
+    }
+  },
+  {
+    "id": 34,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": {
+      "id": 13,
+      "name": "Trios"
+    }
+  },
+  {
+    "id": 35,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": {
+      "id": 13,
+      "name": "Trios"
+    }
+  },
+  {
+    "id": 36,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": {
+      "id": 14,
+      "name": "Chanchos del Picante"
+    }
+  },
+  {
+    "id": 37,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": {
+      "id": 14,
+      "name": "Chanchos del Picante"
+    }
+  },
+  {
+    "id": 38,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": {
+      "id": 14,
+      "name": "Chanchos del Picante"
+    }
+  },
+  {
+    "id": 39,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": {
+      "id": 15,
+      "name": "Bebidas"
+    }
+  },
+  {
+    "id": 40,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": {
+      "id": 15,
+      "name": "Bebidas"
+    }
+  },
+  {
+    "id": 41,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": {
+      "id": 15,
+      "name": "Bebidas"
+    }
+  },
+  {
+    "id": 42,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": {
+      "id": 15,
+      "name": "Bebidas"
+    }
+  },
+  {
+    "id": 43,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 44,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 45,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 46,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 47,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 48,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 49,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 50,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 51,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 52,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 53,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 54,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 55,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 56,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 57,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 58,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 59,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 60,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 61,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 62,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 63,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 64,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 65,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 66,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 67,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 68,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 69,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 70,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 71,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 72,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 73,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 74,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 75,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 76,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 77,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 78,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 79,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 80,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 81,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 82,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 83,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 84,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 85,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 86,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 87,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 88,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 89,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 90,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 91,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 92,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 93,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 94,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 95,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 96,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 97,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 98,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 99,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 100,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 101,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 102,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 103,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 104,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 105,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 106,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 107,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 108,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 109,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 110,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 111,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 112,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 113,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 114,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 115,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 116,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 117,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 118,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 119,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 120,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 121,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 122,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 123,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 124,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 125,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 126,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 127,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 128,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 129,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 130,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 131,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 132,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 133,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 134,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 135,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 136,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 137,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 138,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 139,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 140,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 141,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 142,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 143,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 144,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 145,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 146,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 147,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 148,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 149,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 150,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 151,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 152,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 153,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 154,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 155,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 156,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 157,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 158,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 159,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 160,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 161,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 162,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 163,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 164,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 165,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 166,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 167,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 168,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 169,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 170,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 171,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 172,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 173,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 174,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 175,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 176,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 177,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 178,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 179,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 180,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 181,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 182,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 183,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 184,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 185,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 186,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 187,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 188,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 189,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 190,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 191,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 192,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 193,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 194,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 195,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 196,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 197,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 198,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 199,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 200,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 201,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 202,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 203,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 204,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 205,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 206,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 207,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 208,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 209,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 210,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 211,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 212,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 213,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 214,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 215,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 216,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 217,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 218,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 219,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 220,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 221,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 222,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 223,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 224,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 225,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 226,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 227,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 228,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 229,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 230,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 231,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 232,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 233,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 234,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 235,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 236,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 237,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 238,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 239,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 240,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 241,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 242,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 243,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 244,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 245,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 246,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 247,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 248,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 249,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 250,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 251,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 252,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 253,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 254,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 255,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 256,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 257,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 258,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 259,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 260,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 261,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 262,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 263,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 264,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 265,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 266,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 267,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 268,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 269,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 270,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 271,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 272,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 273,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 274,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 275,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 276,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 277,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 278,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 279,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 280,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 281,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 282,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 283,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 284,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 285,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 286,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 287,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 288,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 289,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 290,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 291,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 292,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 293,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 294,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 295,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 296,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 297,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 298,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 299,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 300,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 301,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 302,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 303,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 304,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 305,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 306,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 307,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 308,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 309,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 310,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 311,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 312,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 313,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 314,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 315,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 316,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 317,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 318,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 319,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 320,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 321,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 322,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 323,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 324,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 325,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 326,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 327,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 328,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 329,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 330,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 331,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 332,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 333,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 334,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 335,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 336,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 337,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 338,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 339,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 340,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 341,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 342,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 343,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 344,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 345,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 346,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 347,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 348,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 349,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 350,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 351,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 352,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 353,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 354,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 355,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 356,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 357,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 358,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 359,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 360,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 361,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 362,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 363,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 364,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 365,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 366,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 367,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 368,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 369,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 370,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 371,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 372,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 373,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 374,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 375,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 376,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 377,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 378,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 379,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 380,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 381,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 382,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 383,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 384,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 385,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 386,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 387,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 388,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 389,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 390,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 391,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 392,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 393,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 394,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 395,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 396,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 397,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 398,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 399,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 400,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 401,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 402,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 403,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 404,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 405,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 406,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 407,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 408,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 409,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 410,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 411,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 412,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 413,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 414,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 415,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 416,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 417,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 418,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 419,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 420,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 421,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 422,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 423,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 424,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 425,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 426,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 427,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 428,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 429,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 430,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 431,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 432,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 433,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 434,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 435,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 436,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 437,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 438,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 439,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 440,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 441,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 442,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 443,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 444,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 445,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 446,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 447,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 448,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 449,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 450,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 451,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 452,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 453,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 454,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 455,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 456,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 457,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 458,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 459,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 460,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 461,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 462,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 463,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 464,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 465,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 466,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 467,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 468,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 469,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 470,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 471,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 472,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 473,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 474,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 475,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 476,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 477,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 478,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 479,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 480,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 481,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 482,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 483,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 484,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 485,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 486,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 487,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 488,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 489,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 490,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 491,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 492,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 493,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 494,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 495,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 496,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 497,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 498,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 499,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 500,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 501,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 502,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 503,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 504,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 505,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 506,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 507,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 508,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 509,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 510,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 511,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 512,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 513,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 514,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 515,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 516,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 517,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 518,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 519,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 520,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 521,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 522,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 523,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 524,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 525,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 526,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 527,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 528,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 529,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 530,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 531,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 532,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 533,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 534,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 535,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 536,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 537,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 538,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 539,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 540,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 541,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 542,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 543,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 544,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 545,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 546,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 547,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 548,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 549,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 550,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 551,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 552,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 553,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 554,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 555,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 556,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 557,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 558,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 559,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 560,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 561,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 562,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 563,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 564,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 565,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 566,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 567,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 568,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 569,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 570,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 571,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 572,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 573,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 574,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 575,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 576,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 577,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 578,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 579,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 580,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 581,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 582,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 583,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 584,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 585,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 586,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 587,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 588,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 589,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 590,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 591,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 592,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 593,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 594,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 595,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 596,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 597,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 598,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 599,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 600,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 601,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 602,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 603,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 604,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 605,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 606,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 607,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 608,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 609,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 610,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 611,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 612,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 613,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 614,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 615,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 616,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 617,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 618,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 619,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 620,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 621,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 622,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 623,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 624,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 625,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 626,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 627,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 628,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 629,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 630,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 631,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 632,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 633,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 634,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 635,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 636,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 637,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 638,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 639,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 640,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 641,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 642,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 643,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 644,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 645,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 646,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 647,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 648,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 649,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 650,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 651,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 652,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 653,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 654,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 655,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 656,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 657,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 658,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 659,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 660,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 661,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 662,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 663,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 664,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 665,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 666,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 667,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 668,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 669,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 670,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 671,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 672,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 673,
+    "name": "Combinado Manchapecho 4x4",
+    "price": 14.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 674,
+    "name": "Manchapecho Taypa 4x4",
+    "price": 17.0,
+    "description": "Chanfainita + TallarÃ­n + Crema a la HuancaÃ­na + Ceviche (PorciÃ³n Taypa)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 675,
+    "name": "Combinado Picantero 7 Colores",
+    "price": 22.0,
+    "description": "Chanfainita + TallarÃ­n + Ceviche + HuancaÃ­na + ChicharrÃ³n de Pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 676,
+    "name": "Cuadro El Picante",
+    "price": 25.0,
+    "description": "Arroz con Mariscos + Ceviche + TallarÃ­n + Chanfainita + HuancaÃ­na",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 677,
+    "name": "Lomo Saltado",
+    "price": 25.0,
+    "description": "ClÃ¡sico lomo saltado al jugo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 678,
+    "name": "TallarÃ­n Saltado de Pollo",
+    "price": 23.0,
+    "description": "TallarÃ­n saltado criollo con pollo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 679,
+    "name": "Fetuchini a la HuancaÃ­na con Lomo",
+    "price": 28.0,
+    "description": "Pasta en salsa huancaÃ­na con lomo saltado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 680,
+    "name": "Pollo a la Plancha con Papa Nativa",
+    "price": 24.0,
+    "description": "Filete de pollo dorado con papas andinas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 681,
+    "name": "Lenguado Frito",
+    "price": 30.0,
+    "description": "Lenguado fresco frito con guarniciÃ³n",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 682,
+    "name": "Chita Frita",
+    "price": 28.0,
+    "description": "Pescado Chita frito crocante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 683,
+    "name": "Ceviche ClÃ¡sico",
+    "price": 18.0,
+    "description": "Pura pulpa de jurel con sus infaltables guarniciones",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 684,
+    "name": "Ceviche Especial",
+    "price": 25.0,
+    "description": "A base de pescado blanco marinado en crema de rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 685,
+    "name": "Ceviche Mixto",
+    "price": 30.0,
+    "description": "A base de pescado blanco y mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 686,
+    "name": "Ceviche Carretillero",
+    "price": 28.0,
+    "description": "Ceviche a base de jurel al estilo Picante con chicharrÃ³n de pota",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 687,
+    "name": "Cevichop ClÃ¡sica",
+    "price": 15.0,
+    "description": "Pulpa de jurel en gajos marinados al estilo picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 688,
+    "name": "Cevichop al Rocoto",
+    "price": 18.0,
+    "description": "Pulpa de jurel en gajos marinados en crema rocoto",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 689,
+    "name": "Cevichop 3 Diablos",
+    "price": 20.0,
+    "description": "Pulpa de jurel marinado en crema de 3 ajÃ­es bien picante",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 690,
+    "name": "Causa Acevichada",
+    "price": 20.0,
+    "description": "Causa rellena coronada con ceviche",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 691,
+    "name": "Causa con Langostinos Fritos",
+    "price": 28.0,
+    "description": "Masa de papa amarilla con langostinos crocantes",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 692,
+    "name": "Causa Duo 1 con ChicharrÃ³n",
+    "price": 30.0,
+    "description": "Causa + ChicharrÃ³n de Pescado",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 693,
+    "name": "Arroz con Mariscos",
+    "price": 25.0,
+    "description": "Deliciosa preparaciÃ³n combinando sabor y texturas del mar",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 694,
+    "name": "Chaufa de Mariscos",
+    "price": 26.0,
+    "description": "Mix de mariscos con toques orientales y de la casa",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 695,
+    "name": "Risoto de Langostinos",
+    "price": 31.0,
+    "description": "Mezcla perfecta entre sabor y textura con la delicia del mar y ajÃ­ amarillo",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 696,
+    "name": "ChicharrÃ³n de Pescado",
+    "price": 27.0,
+    "description": "Trozos de pescado crujientes y sabrosos con yucas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 697,
+    "name": "ChicharrÃ³n de Pota",
+    "price": 25.0,
+    "description": "Pota en tiras crujientes servido con yucas fritas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 698,
+    "name": "Jalea Simple",
+    "price": 33.0,
+    "description": "Crujiente combinaciÃ³n de chicharrones de pescado, cangrejo y marisco",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 699,
+    "name": "Jalea Real",
+    "price": 38.0,
+    "description": "Pescado entero empanizado con chicharrones de mixtura de mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 700,
+    "name": "Chupe de Camarones",
+    "price": 32.0,
+    "description": "Sopita costeÃ±a con camarones frescos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 701,
+    "name": "Sudado de Pescado",
+    "price": 30.0,
+    "description": "Pescado con la sazÃ³n de la casa y el infaltable yuca sancochada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 702,
+    "name": "Sudado de Lenguado",
+    "price": 35.0,
+    "description": "Trucha entera con la sazÃ³n de la casa (Nota: imagen dice trucha/lenguado)",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 703,
+    "name": "DÃºo ClÃ¡sico 1",
+    "price": 25.0,
+    "description": "Ceviche + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 704,
+    "name": "DÃºo El Picante 1",
+    "price": 30.0,
+    "description": "Ceviche Mixto + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 705,
+    "name": "TrÃ­o ClÃ¡sico 1",
+    "price": 35.0,
+    "description": "Ceviche + ChicharrÃ³n de Pescado + Arroz con Mariscos",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 706,
+    "name": "TrÃ­o Bravaso",
+    "price": 30.0,
+    "description": "Ceviche Mixto + ChicharrÃ³n de Pescado + Chanfainita",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 707,
+    "name": "Ronda Pikisiki",
+    "price": 55.0,
+    "description": "Chanfainita + Ceviche + Causa + ChicharrÃ³n de Pota + Arroz con Mariscos + Leche de Tigre",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 708,
+    "name": "Caja China Mixta",
+    "price": 35.0,
+    "description": "Trozo de chancho + Pollo ahumado + Chorizo + Papas + Tamal",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 709,
+    "name": "LechÃ³n Mixto Estilo El Picante",
+    "price": 35.0,
+    "description": "LechÃ³n al horno jugoso + Pollo al horno + Papas",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 710,
+    "name": "ChicharrÃ³n de Costillas",
+    "price": 30.0,
+    "description": "Costillas de cerdo jugoso + Papas + Ensalada",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 711,
+    "name": "Chicha Morada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de chicha morada casera",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 712,
+    "name": "Limonada (Jarra)",
+    "price": 10.0,
+    "description": "1 Jarra de limonada fresca",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 713,
+    "name": "Inca Kola 1L",
+    "price": 8.0,
+    "description": "Gaseosa de vidrio 1 Litro",
+    "available": true,
+    "category": null
+  },
+  {
+    "id": 714,
+    "name": "Cerveza CusqueÃ±a Dorada 620",
+    "price": 10.0,
+    "description": "Cerveza botella grande",
+    "available": true,
+    "category": null
+  }
+]
