@@ -69,6 +69,9 @@ public class SecurityConfig {
                         // Permitir acceso público a autenticación y endpoints de prueba
                         .requestMatchers(new AntPathRequestMatcher("/api/auth/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/api/test/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/products/debug/count")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/products/debug/first")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/products")).permitAll()
                         // Swagger (opcional, pero útil tenerlo listo)
                         .requestMatchers(new AntPathRequestMatcher("/v3/api-docs/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**")).permitAll()

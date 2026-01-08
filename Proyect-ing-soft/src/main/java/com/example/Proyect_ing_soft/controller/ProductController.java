@@ -24,6 +24,16 @@ public class ProductController {
         return productRepository.findAll();
     }
 
+    @GetMapping("/debug/count")
+    public String getCount() {
+        return "Products: " + productRepository.count();
+    }
+
+    @GetMapping("/debug/first")
+    public Product getFirst() {
+        return productRepository.findAll().stream().findFirst().orElse(null);
+    }
+
     // 2. OBTENER UN PRODUCTO POR ID (Público)
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
@@ -50,7 +60,8 @@ public class ProductController {
         product.setPrice(productDetails.getPrice());
         product.setDescription(productDetails.getDescription());
         product.setAvailable(productDetails.isAvailable());
-        // Nota: Aquí podrías actualizar la categoría también si envías el objeto completo
+        // Nota: Aquí podrías actualizar la categoría también si envías el objeto
+        // completo
 
         final Product updatedProduct = productRepository.save(product);
         return ResponseEntity.ok(updatedProduct);

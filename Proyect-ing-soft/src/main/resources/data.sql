@@ -585,7 +585,7 @@ VALUES ('S1', 4, 'AVAILABLE'),
     ('P19', 4, 'AVAILABLE'),
     ('P20', 4, 'AVAILABLE');
 
-INSERT INTO
+INSERT IGNORE INTO
     users (
         username,
         email,
