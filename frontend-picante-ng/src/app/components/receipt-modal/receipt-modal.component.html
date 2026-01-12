@@ -1,0 +1,144 @@
+<div class="modal-overlay" *ngIf="isOpen" (click)="onClose()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+            <h2 class="modal-title">
+                <i class="bi bi-receipt"></i> {{ documentType }}
+            </h2>
+            <button type="button" class="btn-close" (click)="onClose()"></button>
+        </div>
+
+        <div class="modal-body receipt-body">
+            <!-- Encabezado del Restaurante -->
+            <div class="receipt-header text-center">
+                <h3 class="restaurant-name">PICANTE</h3>
+                <p class="restaurant-info">Restaurante - Cocina Peruana</p>
+                <p class="restaurant-info small">Jr. Principal 123, Lima, Perú</p>
+                <p class="restaurant-info small">Teléfono: (01) 1234-5678</p>
+            </div>
+
+            <hr class="receipt-divider">
+
+            <!-- Tipo de Comprobante -->
+            <div class="receipt-section">
+                <p class="text-center fw-bold">{{ documentType }}</p>
+                <p class="text-center small text-muted">Documento de venta</p>
+            </div>
+
+            <hr class="receipt-divider">
+
+            <!-- Datos de la Transacción -->
+            <div class="receipt-section">
+                <div class="row">
+                    <div class="col-6">
+                        <p><strong>Mesa:</strong> {{ table?.name }}</p>
+                        <p><strong>Mozo:</strong> Sistema</p>
+                    </div>
+                    <div class="col-6">
+                        <p><strong>Fecha:</strong> {{ currentDateTime | date:'dd/MM/yyyy' }}</p>
+                        <p><strong>Hora:</strong> {{ currentDateTime | date:'HH:mm:ss' }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="receipt-divider">
+
+            <!-- Datos del Cliente -->
+            <div class="receipt-section">
+                <p><strong>Cliente:</strong> {{ customerName }}</p>
+                <p *ngIf="documentNumber !== 'N/A'">
+                    <strong *ngIf="paymentData?.voucherType === 'BOLETA'">DNI:</strong>
+                    <strong *ngIf="paymentData?.voucherType === 'FACTURA'">RUC:</strong>
+                    {{ documentNumber }}
+                </p>
+            </div>
+
+            <hr class="receipt-divider">
+
+            <!-- Detalle de Artículos -->
+            <div class="receipt-section">
+                <table class="receipt-table">
+                    <thead>
+                        <tr>
+                            <th>Descripción</th>
+                            <th class="text-right">Cant.</th>
+                            <th class="text-right">Precio</th>
+                            <th class="text-right">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of order?.items">
+                            <td>{{ item.productName }}</td>
+                            <td class="text-right">{{ item.quantity }}</td>
+                            <td class="text-right">S/. {{ item.unitPrice | number:'1.2-2' }}</td>
+                            <td class="text-right">S/. {{ item.subtotal | number:'1.2-2' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="receipt-divider">
+
+            <!-- Totales -->
+            <div class="receipt-section totals">
+                <div class="total-row">
+                    <span>Subtotal:</span>
+                    <span>S/. {{ order?.totalAmount | number:'1.2-2' }}</span>
+                </div>
+                <div class="total-row amount-due">
+                    <strong>MONTO TOTAL:</strong>
+                    <strong>S/. {{ order?.totalAmount | number:'1.2-2' }}</strong>
+                </div>
+                <div class="total-row payment-method">
+                    <span>Forma de Pago:</span>
+                    <span>{{ paymentData?.paymentMethod || 'N/A' }}</span>
+                </div>
+                <div class="total-row" *ngIf="paymentData?.paymentMethod === 'EFECTIVO' && paymentData?.amountReceived">
+                    <span>Monto Recibido:</span>
+                    <span>S/. {{ paymentData?.amountReceived | number:'1.2-2' }}</span>
+                </div>
+                <div class="total-row" *ngIf="paymentData?.paymentMethod === 'EFECTIVO' && paymentData?.amountReceived">
+                    <span>Vuelto:</span>
+                    <span>S/. {{ ((paymentData?.amountReceived || 0) - (order?.totalAmount || 0)) | number:'1.2-2' }}</span>
+                </div>
+            </div>
+
+            <hr class="receipt-divider">
+
+            <!-- Tiempos de Servicio -->
+            <div class="receipt-section service-times">
+                <p class="text-center fw-bold mb-3">Tiempos de Servicio</p>
+                <div class="row">
+                    <div class="col-6 text-center">
+                        <p class="small text-muted">Tiempo Mozo</p>
+                        <p class="fw-bold">{{ mozoTimeFormatted }}</p>
+                    </div>
+                    <div class="col-6 text-center">
+                        <p class="small text-muted">Tiempo Cocina</p>
+                        <p class="fw-bold">{{ kitchenTimeFormatted }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="receipt-divider">
+
+            <!-- Pie de Comprobante -->
+            <div class="receipt-footer text-center">
+                <p class="small">Gracias por su compra</p>
+                <p class="small">¡Vuelva pronto!</p>
+                <p class="small mt-2" style="font-size: 0.7rem; color: #999;">
+                    Este documento no es válido para efectos tributarios
+                </p>
+            </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="onClose()">
+                <i class="bi bi-x-circle"></i> Cerrar
+            </button>
+            <button type="button" class="btn btn-primary" (click)="onPrint()">
+                <i class="bi bi-printer"></i> Imprimir
+            </button>
+        </div>
+    </div>
+</div>

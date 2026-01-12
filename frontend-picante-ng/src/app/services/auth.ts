@@ -13,23 +13,53 @@ export class AuthService {
 
   constructor() { }
 
+  /**
+   * Login con sessionStorage para aislamiento por pestaña.
+   * Cada pestaña mantiene su propia sesión independiente.
+   */
   login(credentials: any): Observable<any> {
     return this.http.post(this.apiUrl + 'login', credentials).pipe(
       tap((response: any) => {
         if (response.accessToken) {
-          localStorage.setItem('user', JSON.stringify(response));
+          // MIGRADO A sessionStorage: cada pestaña tiene su propia sesión
+          sessionStorage.setItem('user', JSON.stringify(response));
+          console.log('✓ Sesión almacenada en sessionStorage (aislada por pestaña)');
         }
       })
     );
   }
 
+  /**
+   * Logout: limpia SOLO la sesión de esta pestaña.
+   * Otras pestañas NO se verán afectadas.
+   */
   logout(): void {
-    localStorage.removeItem('user');
+    sessionStorage.removeItem('user');
+    console.log('✓ Sesión cerrada en esta pestaña (otras pestañas no afectadas)');
   }
 
+  /**
+   * Obtiene el usuario desde sessionStorage.
+   * Cada pestaña consulta su propia sesión aislada.
+   */
   getUser(): any {
-    const userStr = localStorage.getItem('user');
+    const userStr = sessionStorage.getItem('user');
     return userStr ? JSON.parse(userStr) : null;
+  }
+
+  /**
+   * Verifica si hay una sesión activa en esta pestaña.
+   */
+  isAuthenticated(): boolean {
+    return !!sessionStorage.getItem('user');
+  }
+
+  /**
+   * Obtiene el token JWT desde sessionStorage.
+   */
+  getToken(): string | null {
+    const user = this.getUser();
+    return user?.accessToken || null;
   }
 
   register(user: any): Observable<any> {

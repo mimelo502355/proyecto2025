@@ -5,7 +5,13 @@
       <span class="navbar-brand mb-0 h1 fw-bold">
         <i class="bi bi-shop me-2"></i> El Picante - Mesero
       </span>
-      <div class="d-flex align-items-center text-white">
+      <div class="d-flex align-items-center text-white gap-2">
+        <app-boton-actualizar 
+          texto="Actualizar"
+          textoTooltip="Refrescar estado de mesas"
+          [cargando]="loadingTables"
+          (actualizar)="actualizarMesas()">
+        </app-boton-actualizar>
         <div class="me-3 text-end d-none d-sm-block">
           <small class="d-block opacity-75">Sesión de:</small>
           <span class="fw-bold">{{ currentUser?.username || 'Mesero' }}</span>
@@ -69,9 +75,33 @@
                 'WAITING_PAYMENT' ? 'POR PAGAR' : table.status)) }}
               </span>
 
-              <div *ngIf="table.occupiedAt" class="timer-display mt-2 small fw-bold"
-                [ngClass]="getTimerClass(table.occupiedAt)">
-                <i class="bi bi-stopwatch"></i> {{ getElapsedTime(table.occupiedAt) }}
+              <app-timer *ngIf="table.occupiedAt" [startTime]="table.occupiedAt" [warningMinutes]="20"
+                [dangerMinutes]="30" class="mt-2 small"></app-timer>
+
+              <div class="mt-2" *ngIf="table.status === 'WAITING_PAYMENT' && isAdmin()">
+                <button (click)="confirmarCobro(table)" class="btn btn-sm btn-danger rounded-pill px-3">
+                  <i class="bi bi-cash-coin me-1"></i> Cobrar
+                </button>
+              </div>
+
+              <div class="mt-2" *ngIf="table.status === 'WAITING_PAYMENT' && !isAdmin()">
+                <button (click)="mostrarMensajeCobro()" class="btn btn-sm btn-danger rounded-pill px-3" disabled>
+                  <i class="bi bi-cash-coin me-1"></i> Cobrar
+                </button>
+              </div>
+
+              <div class="mt-2" *ngIf="table.status === 'OCCUPIED'">
+                <button (click)="desocuparMesa(table)" class="btn btn-sm btn-warning rounded-pill px-3">
+                  <i class="bi bi-arrow-clockwise me-1"></i> Desocupar
+                </button>
+              </div>
+
+              <!-- Botón Cancelar Pedido - aparece cuando aún no empieza preparación -->
+              <div class="mt-2 d-flex gap-2 justify-content-center flex-wrap" 
+                *ngIf="table.status === 'OCCUPIED' || table.status === 'READY_TO_KITCHEN' || table.status === 'WAITING_KITCHEN'">
+                <button (click)="cancelarPedido(table)" class="btn btn-sm btn-outline-danger rounded-pill px-3">
+                  <i class="bi bi-x-circle me-1"></i> Cancelar
+                </button>
               </div>
             </div>
           </div>
@@ -100,9 +130,24 @@
                                 'bg-danger': table.status === 'WAITING_PAYMENT',
                                 'bg-warning': table.status !== 'AVAILABLE' && table.status !== 'WAITING_PAYMENT'
                             }">{{ table.status }}</span>
-              <div *ngIf="table.occupiedAt" class="timer-display small fw-bold"
-                [ngClass]="getTimerClass(table.occupiedAt)">
-                <i class="bi bi-stopwatch"></i> {{ getElapsedTime(table.occupiedAt) }}
+              <app-timer *ngIf="table.occupiedAt" [startTime]="table.occupiedAt" [warningMinutes]="20"
+                [dangerMinutes]="30" class="small"></app-timer>
+              <div class="mt-2" *ngIf="table.status === 'WAITING_PAYMENT' && isAdmin()">
+                <button (click)="confirmarCobro(table)" class="btn btn-sm btn-danger rounded-pill px-3">
+                  <i class="bi bi-cash-coin me-1"></i> Cobrar
+                </button>
+              </div>
+              <div class="mt-2" *ngIf="table.status === 'WAITING_PAYMENT' && !isAdmin()">
+                <button (click)="mostrarMensajeCobro()" class="btn btn-sm btn-danger rounded-pill px-3" disabled>
+                  <i class="bi bi-cash-coin me-1"></i> Cobrar
+                </button>
+              </div>
+              <!-- Botón Cancelar Pedido - aparece cuando aún no empieza preparación -->
+              <div class="mt-2" 
+                *ngIf="table.status === 'OCCUPIED' || table.status === 'READY_TO_KITCHEN' || table.status === 'WAITING_KITCHEN'">
+                <button (click)="cancelarPedido(table)" class="btn btn-sm btn-outline-danger rounded-pill px-3 w-100">
+                  <i class="bi bi-x-circle me-1"></i> Cancelar
+                </button>
               </div>
             </div>
           </div>
@@ -111,111 +156,93 @@
     </div>
   </div>
 
-  <!-- MODAL DE PRODUCTOS -->
-  <div *ngIf="showProductModal" class="modal-overlay d-flex align-items-center justify-content-center shadow-lg">
-    <div class="modal-card bg-white rounded-4 shadow overflow-hidden d-flex flex-column animate-slide-up"
-      style="width: 95%; max-width: 600px; max-height: 90vh;">
-      <div class="modal-header bg-danger text-white p-3 d-flex justify-content-between align-items-center">
-        <h5 class="mb-0 fw-bold"><i class="bi bi-cart-plus me-2"></i> Pedido - {{ selectedTable?.name }}</h5>
-        <button (click)="closeProductModal()" class="btn-close btn-close-white shadow-none"></button>
+  <!-- MODAL DE PRODUCTOS (REUTILIZABLE) -->
+  <div *ngIf="menuModalOpen" class="modal-overlay" (click)="closeProductModal()">
+    <div class="modal-content-custom" (click)="$event.stopPropagation()">
+      <div class="modal-header-custom">
+        <h3>🛒 Selecciona platos para: {{ selectedTable?.name || 'Mesa' }}</h3>
+        <button class="btn-close-custom" (click)="closeProductModal()">✕</button>
       </div>
 
-      <div class="modal-body p-0 overflow-hidden d-flex flex-column">
-        <!-- Categorías -->
-        <div class="category-strip d-flex p-3 bg-light border-bottom overflow-auto"
-          style="gap: 10px; scrollbar-width: none;">
-          <button *ngFor="let cat of categories" (click)="selectCategory(cat)"
-            class="btn rounded-pill px-3 py-1 fw-bold text-nowrap"
-            [ngClass]="selectedCategory === cat ? 'btn-danger shadow-sm' : 'btn-white border text-secondary'">
+      <div class="modal-body-custom">
+        <!-- Campo de búsqueda -->
+        <div class="search-box mb-3">
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="🔍 Buscar platos..." 
+            [(ngModel)]="searchText"
+            (input)="onSearchChange()">
+        </div>
+
+        <!-- Filtro por categoría -->
+        <div class="category-filter mb-3">
+          <button 
+            *ngFor="let cat of categories" 
+            (click)="selectCategory(cat)"
+            class="btn btn-sm me-2 mb-2"
+            [class.btn-primary]="selectedCategory === cat"
+            [class.btn-outline-secondary]="selectedCategory !== cat">
             {{ cat }}
           </button>
         </div>
 
-        <!-- Lista de Productos -->
-        <div class="product-scroller p-3 overflow-auto flex-grow-1">
-          <div *ngFor="let p of groupedProducts[selectedCategory]"
-            class="product-row d-flex align-items-center justify-content-between p-3 mb-2 rounded-3 border bg-white hover-shadow transition">
-            <div class="me-3">
-              <div class="fw-bold text-dark">{{ p.name }}</div>
-              <div class="text-muted small mb-1">{{ p.price | currency:'PEN':'S/. ' }}</div>
+        <!-- Lista de productos -->
+        <div class="products-list">
+          <div *ngIf="getFilteredProducts().length === 0" class="text-center text-muted py-5">
+            <p>No hay productos disponibles en esta categoría</p>
+          </div>
+          <div *ngFor="let product of getFilteredProducts()" class="product-item">
+            <div class="product-info">
+              <h5>{{ product.name }}</h5>
+              <p class="text-muted small mb-1">{{ product.description }}</p>
+              <p class="text-success fw-bold mb-0">S/. {{ product.price | number:'1.2-2' }}</p>
             </div>
-
-            <div class="d-flex align-items-center bg-light rounded-pill p-1">
-              <button (click)="removeFromOrder(p)" [disabled]="getQuantity(p.id) === 0"
-                class="btn btn-sm btn-white rounded-circle shadow-sm" style="width:30px;height:30px;"><i
-                  class="bi bi-dash"></i></button>
-              <span class="mx-3 fw-bold">{{ getQuantity(p.id) }}</span>
-              <button (click)="addToOrder(p)" class="btn btn-sm btn-danger rounded-circle shadow-sm text-white"
-                style="width:30px;height:30px;"><i class="bi bi-plus"></i></button>
+            <div class="product-actions">
+              <button class="btn btn-sm btn-danger" (click)="removeProduct(product)" [disabled]="getProductQuantity(product.id) === 0">
+                −
+              </button>
+              <span class="quantity-badge">{{ getProductQuantity(product.id) }}</span>
+              <button class="btn btn-sm btn-success" (click)="addProduct(product)">
+                +
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="modal-footer p-3 bg-light border-top d-flex justify-content-between align-items-center">
-        <div class="text-muted small">
-          Confirmados: <span class="fw-bold text-danger">{{ getTotalItems() }}</span> unidades
+      <div class="modal-footer-custom">
+        <div class="total-section">
+          <h4>Total de platos: <span class="badge bg-primary">{{ getTotalQuantity() }}</span></h4>
         </div>
-        <div class="d-flex gap-2">
-          <button (click)="closeProductModal()" class="btn btn-link text-muted text-decoration-none">Cerrar</button>
-          <button (click)="confirmOrder()" [disabled]="getTotalItems() === 0"
-            class="btn btn-danger px-4 rounded-pill fw-bold shadow-sm">
-            CONFIRMAR PEDIDO
+        <div class="action-buttons">
+          <button class="btn btn-secondary me-2" (click)="closeProductModal()">Cancelar</button>
+          <button class="btn btn-success" (click)="confirmOrder()" [disabled]="getTotalQuantity() === 0">
+            ✅ Confirmar Pedido
           </button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- MODAL DE COMPROBANTE / CAJA -->
-  <div *ngIf="showBillModal" class="modal-overlay d-flex align-items-center justify-content-center shadow-lg">
-    <div class="bill-card bg-white rounded-4 shadow overflow-hidden animate-slide-up"
-      style="width: 95%; max-width: 450px;">
-      <div class="modal-header bg-dark text-white p-3 d-flex justify-content-between align-items-center no-print">
-        <h5 class="mb-0 fw-bold"><i class="bi bi-receipt me-2"></i> Comprobante de Pago</h5>
-        <button (click)="closeBillModal()" class="btn-close btn-close-white shadow-none"></button>
-      </div>
+  <!-- MODAL DE PAGO MEJORADO -->
+  <app-payment-modal
+    [isOpen]="showPaymentModal"
+    [table]="selectedTableForPayment"
+    [order]="currentOrderForPayment"
+    [mozoTime]="mozoTime"
+    [kitchenTime]="kitchenTime"
+    (close)="onPaymentClose()"
+    (confirm)="onPaymentConfirm($event)">
+  </app-payment-modal>
 
-      <div class="bill-content p-4" id="printable-bill">
-        <div class="text-center mb-4">
-          <h3 class="fw-bold mb-0">EL PICANTE</h3>
-          <p class="text-muted small mb-0">RUC: 20123456789</p>
-          <p class="text-muted small">Calle Los Olivos 123 - Lima</p>
-          <hr class="my-2 border-dark opacity-25">
-          <div class="d-flex justify-content-between px-2 small">
-            <span>Mesa: {{ selectedTable?.name }}</span>
-            <span>Fecha: {{ now | date:'dd/MM/yyyy HH:mm' }}</span>
-          </div>
-          <hr class="my-2 border-dark opacity-25">
-        </div>
-
-        <div class="product-details mb-4">
-          <div *ngFor="let item of currentOrder?.items" class="d-flex justify-content-between mb-1 small">
-            <span>{{ item.quantity }} x {{ item.productName }}</span>
-            <span class="fw-bold">S/. {{ item.subtotal | number:'1.2-2' }}</span>
-          </div>
-        </div>
-
-        <hr class="my-2 border-dark opacity-25">
-        <div class="d-flex justify-content-between h4 fw-bold mb-0 py-2">
-          <span>TOTAL:</span>
-          <span class="text-danger">S/. {{ currentOrder?.totalAmount | number:'1.2-2' }}</span>
-        </div>
-        <hr class="my-2 border-dark opacity-25">
-
-        <div class="text-center mt-3 small text-muted">
-          <p>¡Gracias por su preferencia!</p>
-        </div>
-      </div>
-
-      <div class="modal-footer p-3 bg-light border-top d-flex gap-2 no-print">
-        <button (click)="printBill()" class="btn btn-outline-dark flex-grow-1 rounded-pill">
-          <i class="bi bi-printer me-1"></i> Imprimir
-        </button>
-        <button *ngIf="isAdmin()" (click)="confirmPayment()" class="btn btn-success flex-grow-1 rounded-pill fw-bold">
-          <i class="bi bi-check-lg me-1"></i> CONFIRMAR PAGO
-        </button>
-      </div>
-    </div>
-  </div>
+  <!-- COMPROBANTE/RECIBO -->
+  <app-receipt
+    [isOpen]="showReceipt"
+    [table]="selectedTableForPayment"
+    [order]="currentOrderForPayment"
+    [paymentData]="lastPaymentData"
+    (close)="onReceiptClose()"
+    (print)="printReceipt()">
+  </app-receipt>
 </div>

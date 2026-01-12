@@ -3,7 +3,15 @@
     <div class="row mb-4 align-items-center bg-white p-3 rounded shadow-sm mx-0 border">
         <div class="col-md-8">
             <h2 class="mb-1 fw-bold text-dark"><i class="bi bi-fire text-danger"></i> Monitor de Cocina</h2>
-            <p class="text-muted mb-0">Gestión de tiempos y estados de pedidos en tiempo real.</p>
+            <p class="text-muted mb-0">Gestión de tiempos y estados de pedidos.</p>
+            <div class="mt-2">
+                <app-boton-actualizar 
+                    texto="Recargar Pedidos"
+                    textoTooltip="Actualizar lista de pedidos"
+                    [cargando]="cargandoPedidos"
+                    (actualizar)="reloadOrders()">
+                </app-boton-actualizar>
+            </div>
         </div>
         <div class="col-md-4 d-flex align-items-center justify-content-end">
             <!-- Gráfico de Pasteles (SVG Dinámico) -->
@@ -56,16 +64,32 @@
                 </div>
 
                 <div class="card-body d-flex flex-column justify-content-center">
-                    <!-- Cronómetro de Preparación -->
-                    <div *ngIf="order.status === 'PREPARING'" class="prep-timer text-center bg-light p-3 rounded mb-2">
-                        <div class="text-muted small text-uppercase fw-bold" style="letter-spacing: 1px;">Tiempo en
-                            Cocina</div>
-                        <div class="display-5 fw-bold text-dark">{{ getPrepTime(order.preparationAt) }}</div>
+                    <!-- Lista de Items del Pedido -->
+                    <div *ngIf="order.orderDetails?.items?.length" class="order-items mb-3">
+                        <div class="small text-muted text-uppercase fw-bold mb-2" style="letter-spacing: 1px;">
+                            <i class="bi bi-receipt"></i> Productos
+                        </div>
+                        <div class="bg-light rounded p-2">
+                            <div *ngFor="let item of order.orderDetails?.items" class="d-flex justify-content-between align-items-center py-1 border-bottom border-white">
+                                <div class="flex-grow-1">
+                                    <span class="badge bg-primary me-2">{{item.quantity}}x</span>
+                                    <span class="fw-medium">{{item.productName}}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div *ngIf="order.status === 'WAITING_KITCHEN'" class="text-center py-4">
+                    <!-- Cronómetro de Preparación -->
+                    <div *ngIf="order.status === 'PREPARING'" class="prep-timer text-center bg-light p-3 rounded mb-2">
+                        <div class="text-muted small text-uppercase fw-bold" style="letter-spacing: 1px;">Tiempo en Cocina</div>
+                        <div class="display-6 fw-bold text-dark">
+                            <app-timer *ngIf="order.preparationAt" [startTime]="order.preparationAt" [warningMinutes]="15" [dangerMinutes]="25"></app-timer>
+                        </div>
+                    </div>
+
+                    <div *ngIf="order.status === 'WAITING_KITCHEN' && !order.orderDetails?.items?.length" class="text-center py-4">
                         <div class="spinner-grow text-primary spinner-grow-sm mb-2" role="status"></div>
-                        <p class="text-muted small mb-0">Esperando que inicies la preparación...</p>
+                        <p class="text-muted small mb-0">Cargando detalles del pedido...</p>
                     </div>
 
                     <div *ngIf="order.status === 'READY'" class="text-center py-3">

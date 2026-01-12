@@ -14,9 +14,18 @@ public class Category {
     private Long id;
     
     private String name;
+    
+    @Column(columnDefinition = "TEXT")
+    private String description;
 
     // Constructor que usa el DataLoader
     public Category(String name) {
         this.name = name;
+        this.description = "";
+    }
+    
+    public Category(String name, String description) {
+        this.name = name;
+        this.description = description;
     }
 }

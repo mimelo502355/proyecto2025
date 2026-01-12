@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TableRepository extends JpaRepository<RestaurantTable, Long> {
     // Spring Data JPA crea los métodos automáticamente
+    java.util.Optional<RestaurantTable> findByName(String name);
 }

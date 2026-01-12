@@ -45,7 +45,11 @@ export class LoginComponent {
 
         // Redirección dinámica según rol
         const roles = data.roles || [];
-        if (roles.includes('ROLE_COCINA')) {
+
+        if (roles.includes('ROLE_ADMIN')) {
+          // Admin directo a su panel
+          this.router.navigate(['/admin']);
+        } else if (roles.includes('ROLE_COCINA')) {
           this.router.navigate(['/chef']);
         } else {
           this.router.navigate(['/mesero-dashboard']);

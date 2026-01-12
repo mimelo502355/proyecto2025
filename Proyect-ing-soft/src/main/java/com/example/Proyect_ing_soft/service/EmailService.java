@@ -1,5 +1,7 @@
 package com.example.Proyect_ing_soft.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
@@ -9,18 +11,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailService {
 
+    private static final Logger logger = LoggerFactory.getLogger(EmailService.class);
+
     @Autowired
     private JavaMailSender mailSender;
 
-    // Leemos tu correo desde application.properties para usarlo como remitente y destinatario
-    // Asegúrate de que en application.properties tengas: spring.mail.username=tucorreo@gmail.com
     @Value("${spring.mail.username}")
     private String adminEmail;
 
     public void enviarCodigoAlAdmin(String nuevoUsuario, String rolSolicitado, String codigo) {
-        // Log de inicio para depuración
-        System.out.println(">>> 1. INICIANDO SERVICIO DE EMAIL..."); 
-        System.out.println(">>> Destinatario (Admin): " + adminEmail);
+        logger.info("Iniciando envío de email de verificación para usuario: {}", nuevoUsuario);
 
         try {
             SimpleMailMessage message = new SimpleMailMessage();
@@ -43,16 +43,12 @@ public class EmailService {
             
             message.setText(cuerpo);
 
-            // Enviar
             mailSender.send(message);
-            
-            // Log de éxito
-            System.out.println(">>> 2. ¡CORREO ENVIADO CON ÉXITO A GMAIL!"); 
+            logger.info("Email de verificación enviado exitosamente para usuario: {}", nuevoUsuario);
 
         } catch (Exception e) {
-            // Log de error detallado por si falla
-            System.err.println(">>> 3. ERROR FATAL ENVIANDO CORREO:"); 
-            e.printStackTrace(); 
+            logger.error("Error enviando email de verificación para usuario: {}", nuevoUsuario, e);
+            throw new RuntimeException("Error enviando email de verificación", e);
         }
     }
 }

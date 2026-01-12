@@ -5,17 +5,20 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.LockedException; // Importante
+import org.springframework.security.authentication.LockedException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*; // RestController, etc.
+import org.springframework.web.bind.annotation.*;
 
 import com.example.Proyect_ing_soft.model.*;
 import com.example.Proyect_ing_soft.payload.request.LoginRequest;
@@ -27,8 +30,9 @@ import com.example.Proyect_ing_soft.service.EmailService;
 
 @RestController
 @RequestMapping("/api/auth")
-// NOTA: No usamos @CrossOrigin aquí porque ya está en SecurityConfig
 public class AuthController {
+
+    private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
     @Autowired AuthenticationManager authenticationManager;
     @Autowired UserRepository userRepository;
@@ -77,7 +81,7 @@ public class AuthController {
         try {
             emailService.enviarCodigoAlAdmin(user.getUsername(), strRole, code);
         } catch (Exception e) {
-            System.err.println("Error enviando email: " + e.getMessage());
+            logger.error("Error enviando email de verificación para usuario {}: {}", user.getUsername(), e.getMessage());
         }
 
         return ResponseEntity.ok("Solicitud enviada. Esperando verificación.");

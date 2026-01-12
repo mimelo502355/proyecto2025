@@ -1,0 +1,130 @@
+<div class="receipt-overlay" *ngIf="isOpen" (click)="onClose()">
+    <div class="receipt-container" (click)="$event.stopPropagation()">
+        <!-- Recibo Imprimible -->
+        <div class="receipt-print">
+            <div class="receipt-header">
+                <h1 class="receipt-title">🍽️ RESTAURANTE PICANTE</h1>
+                <p class="receipt-subtitle">{{ voucherTypeLabel }}</p>
+                <div class="receipt-number">Recibo #{{ receiptNumber }}</div>
+            </div>
+
+            <div class="receipt-divider"></div>
+
+            <!-- Información de la Transacción -->
+            <div class="receipt-section">
+                <div class="receipt-row">
+                    <span class="receipt-label">Mesa:</span>
+                    <span class="receipt-value">{{ table?.name }}</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">Fecha:</span>
+                    <span class="receipt-value">{{ formattedDate }}</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="receipt-label">Hora:</span>
+                    <span class="receipt-value">{{ formattedTime }}</span>
+                </div>
+            </div>
+
+            <div class="receipt-divider"></div>
+
+            <!-- Detalles de Productos -->
+            <div class="receipt-section">
+                <p class="section-title">DETALLE DE CONSUMO</p>
+                <div class="receipt-items">
+                    <div class="receipt-item-header">
+                        <span>Descripción</span>
+                        <span>Cant.</span>
+                        <span>P.U.</span>
+                        <span>Subtotal</span>
+                    </div>
+                    <div class="receipt-item" *ngFor="let item of order?.items">
+                        <span class="item-name">{{ item.productName }}</span>
+                        <span class="item-qty">{{ item.quantity }}</span>
+                        <span class="item-price">S/. {{ item.unitPrice | number: '1.2-2' }}</span>
+                        <span class="item-total">S/. {{ (item.unitPrice * item.quantity) | number: '1.2-2' }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="receipt-divider"></div>
+
+            <!-- Resumen de Montos -->
+            <div class="receipt-section">
+                <div class="receipt-row total-row">
+                    <span class="receipt-label">SUBTOTAL:</span>
+                    <span class="receipt-value">S/. {{ order?.totalAmount | number: '1.2-2' }}</span>
+                </div>
+                <div class="receipt-row total-row">
+                    <span class="receipt-label">IGV (18%):</span>
+                    <span class="receipt-value">S/. {{ (order?.totalAmount! * 0.18) | number: '1.2-2' }}</span>
+                </div>
+                <div class="receipt-row total-row" style="font-size: 1.1rem; font-weight: bold;">
+                    <span class="receipt-label">TOTAL:</span>
+                    <span class="receipt-value">S/. {{ order?.totalAmount | number: '1.2-2' }}</span>
+                </div>
+            </div>
+
+            <div class="receipt-divider"></div>
+
+            <!-- Información de Pago -->
+            <div class="receipt-section">
+                <p class="section-title">FORMA DE PAGO</p>
+                <div class="receipt-row">
+                    <span class="receipt-label">Método:</span>
+                    <span class="receipt-value">{{ paymentMethodLabel }}</span>
+                </div>
+
+                <!-- Solo mostrar si es efectivo y hay cambio -->
+                <div *ngIf="paymentData?.paymentMethod === 'EFECTIVO'">
+                    <div class="receipt-row">
+                        <span class="receipt-label">Monto Recibido:</span>
+                        <span class="receipt-value">S/. {{ paymentData?.amountReceived | number: '1.2-2' }}</span>
+                    </div>
+                    <div class="receipt-row" [ngClass]="{'text-success': change > 0, 'text-danger': change < 0}">
+                        <span class="receipt-label">Vuelto:</span>
+                        <span class="receipt-value">S/. {{ change | number: '1.2-2' }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Información de Documento (Boleta/Factura) -->
+            <div class="receipt-section" *ngIf="paymentData?.voucherType !== 'NOTA_PEDIDO'">
+                <p class="section-title">DATOS DEL COMPROBANTE</p>
+                <div class="receipt-row" *ngIf="paymentData?.voucherType === 'BOLETA'">
+                    <span class="receipt-label">DNI:</span>
+                    <span class="receipt-value">{{ paymentData?.dni }}</span>
+                </div>
+                <div *ngIf="paymentData?.voucherType === 'FACTURA'">
+                    <div class="receipt-row">
+                        <span class="receipt-label">RUC:</span>
+                        <span class="receipt-value">{{ paymentData?.ruc }}</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span class="receipt-label">Razón Social:</span>
+                        <span class="receipt-value">{{ paymentData?.customerName }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="receipt-divider"></div>
+
+            <!-- Mensaje Final -->
+            <div class="receipt-footer">
+                <p>¡GRACIAS POR SU COMPRA!</p>
+                <p>Vuelva pronto a Restaurante Picante</p>
+                <p style="font-size: 0.85rem; margin-top: 1rem;">Sistema de Gestión | {{ formattedDate }} {{ formattedTime }}</p>
+            </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="receipt-controls">
+            <button class="btn btn-print" (click)="onPrint()">
+                <i class="bi bi-printer"></i> Imprimir
+            </button>
+            <button class="btn btn-close" (click)="onClose()">
+                <i class="bi bi-x-circle"></i> Cerrar
+            </button>
+        </div>
+    </div>
+</div>

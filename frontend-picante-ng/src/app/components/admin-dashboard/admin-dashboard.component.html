@@ -1,0 +1,444 @@
+<div class="admin-shell">
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="sidebar">
+    <div class="sidebar-title">☰ Panel Admin</div>
+    <button [class.active]="activeTab() === 'mesas'" (click)="setTab('mesas')" class="nav-btn">
+      <span class="icon">🍽️</span> Mesas
+    </button>
+    <button [class.active]="activeTab() === 'inventario'" (click)="setTab('inventario')" class="nav-btn">
+      <span class="icon">📦</span> Inventario
+    </button>
+    <button [class.active]="activeTab() === 'deliveries'" (click)="setTab('deliveries')" class="nav-btn">
+      <span class="icon">🚚</span> Deliveries
+    </button>
+    <button [class.active]="activeTab() === 'carta'" (click)="setTab('carta')" class="nav-btn">
+      <span class="icon">📖</span> Carta
+    </button>
+    <button [class.active]="activeTab() === 'ventas'" (click)="setTab('ventas')" class="nav-btn">
+      <span class="icon">💰</span> Ventas
+    </button>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <!-- ===== TAB 1: MESAS ===== -->
+    <section *ngIf="activeTab() === 'mesas'" class="section-card">
+      <header class="section-header">
+        <h2>Gestión de Mesas</h2>
+        <app-boton-actualizar
+          texto="Refrescar"
+          textoTooltip="Actualizar lista de mesas"
+          [cargando]="cargandoMesas"
+          (actualizar)="actualizarMesas()">
+        </app-boton-actualizar>
+      </header>
+
+      <div *ngIf="payFeedback" class="feedback" [class.success]="payFeedback.includes('✓')" [class.error]="payFeedback.includes('✗')">
+        {{ payFeedback }}
+      </div>
+
+      <div *ngIf="loadingTables" class="loading">Cargando mesas...</div>
+
+      <div class="tables-grid">
+        <div class="table-card" *ngFor="let table of tables" [class.occupied]="table.status === 'OCCUPIED'" [class.waiting]="table.status === 'WAITING_PAYMENT'">
+          <div class="table-info">
+            <h4>{{ table.name }}</h4>
+            <p class="status-badge" [class.occupied]="table.status === 'OCCUPIED'" [class.waiting]="table.status === 'WAITING_PAYMENT'">
+              {{ table.status }}
+            </p>
+            <div *ngIf="table.occupiedAt" class="mt-1">
+              <app-timer [startTime]="table.occupiedAt" [warningMinutes]="20" [dangerMinutes]="30"></app-timer>
+            </div>
+          </div>
+          <button 
+            class="btn-pay" 
+            (click)="confirmarCobro(table)"
+            [disabled]="table.status !== 'WAITING_PAYMENT'"
+            [title]="table.status === 'WAITING_PAYMENT' ? 'Procesar pago' : 'No disponible para pagar'">
+            💰 Cobrar
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="tables.length === 0" class="no-data">No hay mesas registradas</div>
+    </section>
+
+    <!-- ===== TAB 2: INVENTARIO AVANZADO ===== -->
+    <section *ngIf="activeTab() === 'inventario'" class="section-card">
+      <header class="section-header">
+        <h2>Inventario Avanzado (Insumos & Recetas)</h2>
+        <div class="section-tabs">
+          <button class="tab-btn active">Insumos</button>
+          <button class="tab-btn">Recetas</button>
+        </div>
+      </header>
+
+      <div *ngIf="inventoryFeedback" class="feedback" [class.success]="inventoryFeedback.includes('✓')" [class.error]="inventoryFeedback.includes('✗')">
+        {{ inventoryFeedback }}
+      </div>
+
+      <div class="inventory-grid">
+        <div class="ingredient-card" *ngFor="let ing of ingredients" [class.low-stock]="isLowStock(ing)">
+          <div class="ingredient-header">
+            <h4>{{ ing.name }}</h4>
+            <span *ngIf="isLowStock(ing)" class="badge-low">Stock Bajo ⚠️</span>
+          </div>
+
+          <div *ngIf="!editingIngredient || editingIngredient.id !== ing.id" class="ingredient-view">
+            <div class="stock-info">
+              <span class="stock-value">{{ ing.stock }}</span>
+              <span class="stock-unit">{{ ing.unit }}</span>
+            </div>
+            <p class="stock-threshold">Límite: {{ ing.lowStockThreshold }} {{ ing.unit }}</p>
+            <button class="btn-edit" (click)="startEditIngredient(ing)">✏️ Ajustar Stock</button>
+          </div>
+
+          <div *ngIf="editingIngredient && editingIngredient.id === ing.id" class="ingredient-edit">
+            <label>Stock Actual:</label>
+            <input type="number" [(ngModel)]="editingIngredient.stock" min="0" class="input-number">
+            <div class="edit-actions">
+              <button class="btn-save" (click)="saveIngredientChange()">✓ Guardar</button>
+              <button class="btn-cancel" (click)="cancelEditIngredient()">✗ Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipes-section">
+        <h3>Recetas (Aplicar Descuentos)</h3>
+        <div class="recipes-grid">
+          <div class="recipe-card" *ngFor="let recipe of recipes">
+            <h4>{{ recipe.dishName }}</h4>
+            <ul class="ingredients-list">
+              <li *ngFor="let item of recipe.ingredients">
+                {{ getIngredientName(item.ingredientId) }}
+                <span class="qty">x{{ item.quantity }}</span>
+              </li>
+            </ul>
+            <button class="btn-consume" (click)="consumeRecipeIngredients(recipe)">
+              → Descontar Insumos
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TAB 3: DELIVERIES ===== -->
+    <section *ngIf="activeTab() === 'deliveries'" class="section-card">
+      <header class="section-header">
+        <h2>Gestión de Deliveries</h2>
+        <div class="delivery-actions">
+          <button class="btn-whatsapp" (click)="openWhatsApp()">📲 Llamar Motorista</button>
+          <button class="btn-order" (click)="openDeliveryModal()">➕ Nuevo Pedido Delivery</button>
+        </div>
+      </header>
+
+      <div *ngIf="deliveryFeedback" class="feedback" [class.success]="deliveryFeedback.includes('✓')" [class.error]="deliveryFeedback.includes('✗')">
+        {{ deliveryFeedback }}
+      </div>
+
+      <div class="delivery-tabs">
+        <button [class.active]="deliveriesTab() === 'activos'" (click)="setDeliveriesTab('activos')" class="tab-btn">
+          🔴 Activos ({{ activeDeliveries.length }})
+        </button>
+        <button [class.active]="deliveriesTab() === 'guardados'" (click)="setDeliveriesTab('guardados')" class="tab-btn">
+          ✅ Completados ({{ completedDeliveries.length }})
+        </button>
+      </div>
+
+      <div *ngIf="deliveriesTab() === 'activos'" class="deliveries-list">
+        <div *ngIf="activeDeliveries.length === 0" class="no-data">No hay pedidos activos</div>
+        <div class="delivery-order-card" *ngFor="let order of activeDeliveries">
+          <div class="order-header">
+            <div class="order-info">
+              <h4>{{ order.customerName }}</h4>
+              <p>📍 {{ order.address }}</p>
+              <p>📞 {{ order.phone }}</p>
+            </div>
+            <div class="order-status">
+              <span class="status-badge" [class.active]="order.status === 'pending'">{{ order.status }}</span>
+              <button class="btn-edit" (click)="editDeliveryOrder(order)">✏️ Editar</button>
+              <button class="btn-delete" (click)="removeDeliveryOrder(order.id!)">🗑️ Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="deliveriesTab() === 'guardados'" class="deliveries-list">
+        <div *ngIf="completedDeliveries.length === 0" class="no-data">No hay pedidos completados</div>
+        <div class="delivery-order-card completed" *ngFor="let order of completedDeliveries">
+          <div class="order-header">
+            <div class="order-info">
+              <h4>{{ order.customerName }}</h4>
+              <p>📍 {{ order.address }}</p>
+              <p>✓ Entregado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TAB 4: GESTIÓN DE CARTA ===== -->
+    <section *ngIf="activeTab() === 'carta'" class="section-card">
+      <header class="section-header">
+        <h2>📖 Gestión de Carta (Menú)</h2>
+        <p>Administra categorías y productos del restaurante</p>
+      </header>
+    </section>
+
+    <!-- ===== TAB 5: VENTAS ===== -->
+    <section *ngIf="activeTab() === 'ventas'" class="section-card">
+      <header class="section-header">
+        <h2><i class="bi bi-graph-up"></i> Reporte de Ventas</h2>
+      </header>
+
+      <!-- Filtros de Fecha -->
+      <div class="sales-filters">
+        <div class="filter-group">
+          <label class="filter-label">Período:</label>
+          <div class="filter-buttons">
+            <button 
+              [class.active]="salesFilterType() === 'dia'"
+              (click)="changeDateFilter('dia')"
+              class="filter-btn">
+              📅 Hoy
+            </button>
+            <button 
+              [class.active]="salesFilterType() === 'semana'"
+              (click)="changeDateFilter('semana')"
+              class="filter-btn">
+              📆 Esta Semana
+            </button>
+            <button 
+              [class.active]="salesFilterType() === 'mes'"
+              (click)="changeDateFilter('mes')"
+              class="filter-btn">
+              📊 Este Mes
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resumen de Ventas -->
+      <div class="sales-summary">
+        <div class="summary-card">
+          <p class="summary-label">Total de Ventas</p>
+          <p class="summary-value">S/. {{ totalSales | number:'1.2-2' }}</p>
+        </div>
+        <div class="summary-card">
+          <p class="summary-label">Total de Pedidos</p>
+          <p class="summary-value">{{ filteredOrders.length }}</p>
+        </div>
+        <div class="summary-card">
+          <p class="summary-label">Promedio por Pedido</p>
+          <p class="summary-value">S/. {{ (filteredOrders.length > 0 ? totalSales / filteredOrders.length : 0) | number:'1.2-2' }}</p>
+        </div>
+      </div>
+
+      <!-- Tabla de Pedidos Completados -->
+      <div class="sales-table-container">
+        <div *ngIf="loadingSales" class="loading">
+          <i class="bi bi-hourglass-split"></i> Cargando ventas...
+        </div>
+
+        <div *ngIf="!loadingSales && filteredOrders.length === 0" class="no-data">
+          No hay ventas registradas en este período
+        </div>
+
+        <div *ngIf="!loadingSales && filteredOrders.length > 0" class="table-responsive">
+          <table class="sales-table">
+            <thead>
+              <tr>
+                <th>Mesa</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Items</th>
+                <th>Total</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let order of filteredOrders" class="sales-row">
+                <td class="table-name">{{ order.tableId }}</td>
+                <td>{{ order.createdAt | date:'dd/MM/yyyy' }}</td>
+                <td>{{ order.createdAt | date:'HH:mm:ss' }}</td>
+                <td class="items-count">
+                  <span class="badge">{{ order.items.length || 0 }}</span>
+                </td>
+                <td class="amount">
+                  <strong>S/. {{ order.totalAmount | number:'1.2-2' }}</strong>
+                </td>
+                <td>
+                  <span class="badge" [ngClass]="{
+                    'bg-success': order.status === 'PAID',
+                    'bg-warning': order.status === 'WAITING_PAYMENT',
+                    'bg-info': order.status === 'OPEN'
+                  }">
+                    {{ order.status }}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ===== MENU MODAL (CARTA) ===== -->
+<app-menu-modal 
+  [isOpen]="activeTab() === 'carta'" 
+  [editMode]="true" 
+  (close)="setTab('mesas')">
+</app-menu-modal>
+
+
+<!-- ===== MODAL: DELIVERY ===== -->
+<div *ngIf="deliveryModalOpen" class="modal-overlay" (click)="closeDeliveryModal()">
+  <div class="modal-dialog" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>Nuevo Pedido Delivery</h3>
+      <button class="btn-close" (click)="closeDeliveryModal()">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="form-section">
+        <h4>Datos del Cliente</h4>
+        <div class="form-group">
+          <label>Nombre *</label>
+          <input type="text" name="customerName" [(ngModel)]="deliveryFormData.customerName" placeholder="Juan Pérez" class="input-text">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Teléfono *</label>
+            <input type="tel" name="phone" [(ngModel)]="deliveryFormData.phone" placeholder="+51 987 654 321" class="input-text">
+          </div>
+          <div class="form-group">
+            <label>Dirección *</label>
+            <input type="text" name="address" [(ngModel)]="deliveryFormData.address" placeholder="Av. Principal 123" class="input-text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Referencia</label>
+          <input type="text" name="reference" [(ngModel)]="deliveryFormData.reference" placeholder="Ej: Al lado del banco" class="input-text">
+        </div>
+        <div class="form-group">
+          <label>Notas Extra</label>
+          <textarea name="notes" [(ngModel)]="deliveryFormData.notes" placeholder="Instrucciones adicionales..." class="input-textarea"></textarea>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h4>Seleccionar Productos</h4>
+
+        <div class="search-delivery-wrapper">
+          <div class="search-delivery-input-group">
+            <span class="search-icon">🔍</span>
+            <input 
+              type="text" 
+              [(ngModel)]="deliverySearchText"
+              placeholder="Busca productos en todas las categorías..."
+              class="search-delivery-input">
+            <button 
+              *ngIf="deliverySearchText.trim()" 
+              type="button" 
+              class="clear-search-btn"
+              (click)="deliverySearchText = ''"
+              title="Limpiar búsqueda">
+              ✕
+            </button>
+          </div>
+          <div class="search-results-badge" *ngIf="deliverySearchText.trim()">
+            <span class="badge">
+              {{ getFilteredDeliveryProducts().length }} 
+              {{ getFilteredDeliveryProducts().length === 1 ? 'producto' : 'productos' }}
+            </span>
+          </div>
+        </div>
+
+        <div class="categories-tabs" *ngIf="!deliverySearchText.trim()">
+          <button 
+            *ngFor="let cat of getCategories()" 
+            [class.active]="selectedCategory === cat"
+            (click)="selectCategory(cat)"
+            class="category-tab">
+            {{ cat }}
+          </button>
+        </div>
+
+        <div class="products-container">
+          <div class="product-item" *ngFor="let prod of (deliverySearchText.trim() ? getFilteredDeliveryProducts() : getCategoryProducts(selectedCategory))">
+            <div class="product-info">
+              <span class="product-name">{{ prod.name }}</span>
+              <span class="product-price">S/. {{ prod.price.toFixed(2) || '0.00' }}</span>
+            </div>
+            <div class="qty-controls">
+              <button class="qty-btn" (click)="removeDeliveryItem(prod.id!)" [disabled]="getDeliveryItemQty(prod.id!) === 0">−</button>
+              <span class="qty-display">{{ getDeliveryItemQty(prod.id!) }}</span>
+              <button class="qty-btn" (click)="addDeliveryItem(prod)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="deliverySearchText.trim() && getFilteredDeliveryProducts().length === 0" class="no-products-message">
+          <p>No se encontraron productos para "{{ deliverySearchText }}"</p>
+        </div>
+      </div>
+
+      <div class="cart-summary">
+        <h4>Carrito ({{ getTotalDeliveryItems() }} items)</h4>
+        <div class="cart-items">
+          <div class="cart-item" *ngFor="let item of deliveryCartItems">
+            <span>{{ item.productName }} x{{ item.quantity }}</span>
+            <span class="item-total">S/. {{ (item.price * item.quantity).toFixed(2) }}</span>
+          </div>
+        </div>
+        <div class="cart-total">
+          <strong>Total:</strong>
+          <strong>S/. {{ getTotalDeliveryPrice().toFixed(2) }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-cancel" (click)="closeDeliveryModal()">Cancelar</button>
+      <button class="btn-submit" (click)="submitDeliveryOrder()">✓ Crear Pedido</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAYMENT MODAL ===== -->
+<app-payment-modal
+  *ngIf="showPaymentModal"
+  [isOpen]="showPaymentModal"
+  [table]="selectedTableForPayment"
+  [order]="currentOrderForPayment"
+  [mozoTime]="mozoTime"
+  [kitchenTime]="kitchenTime"
+  (confirm)="onPaymentConfirm($event)"
+  (close)="onPaymentClose()"
+>
+</app-payment-modal>
+
+<!-- ===== RECEIPT MODAL ===== -->
+<app-receipt-modal
+  [isOpen]="showReceipt"
+  [table]="selectedTableForPayment"
+  [order]="currentOrderForPayment"
+  [paymentData]="lastPaymentData"
+  [mozoTime]="mozoTime"
+  [kitchenTime]="kitchenTime"
+  (close)="onReceiptClose()"
+  (print)="printReceipt()"
+>
+</app-receipt-modal>
+
+<!-- ===== RECEIPT ===== -->
+<app-receipt
+  *ngIf="showReceipt"
+  [paymentData]="lastPaymentData"
+  (close)="onReceiptClose()"
+  (print)="printReceipt()"
+>
+</app-receipt>

@@ -632,3 +632,38 @@ FROM users u, roles r
 WHERE
     u.username = 'chef1'
     AND r.name = 'ROLE_COCINA';
+
+-- DELIVERY ORDERS TABLES
+CREATE TABLE IF NOT EXISTS delivery_orders (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    address VARCHAR(500) NOT NULL,
+    reference VARCHAR(255),
+    notes TEXT,
+    status VARCHAR(50) NOT NULL DEFAULT 'PENDING',
+    total_amount DECIMAL(10, 2),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    ready_at DATETIME,
+    dispatched_at DATETIME,
+    delivered_at DATETIME
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Asegurar que el estado acepta todos los valores usados en el backend
+ALTER TABLE delivery_orders 
+    MODIFY status ENUM('PENDING','PREPARING','READY','DISPATCHED','DELIVERED','CANCELLED') 
+    DEFAULT 'PENDING';
+
+CREATE TABLE IF NOT EXISTS delivery_order_items (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    delivery_order_id BIGINT NOT NULL,
+    product_id BIGINT NOT NULL,
+    quantity INT NOT NULL,
+    unit_price DECIMAL(10, 2),
+    subtotal DECIMAL(10, 2),
+    FOREIGN KEY (delivery_order_id) REFERENCES delivery_orders(id),
+    FOREIGN KEY (product_id) REFERENCES products(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE INDEX idx_delivery_status ON delivery_orders(status);
+CREATE INDEX idx_delivery_created ON delivery_orders(created_at);

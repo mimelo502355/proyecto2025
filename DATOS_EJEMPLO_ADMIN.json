@@ -1,0 +1,356 @@
+{
+  "restaurante": {
+    "nombre": "Restaurante Picante",
+    "telefono": "+51987935344",
+    "moneda": "PEN",
+    "paisCodigo": "PE"
+  },
+  
+  "insumos": [
+    {
+      "id": 1,
+      "nombre": "Limones",
+      "unidad": "kg",
+      "stock": 25,
+      "stockMinimo": 5,
+      "costo": 2.50,
+      "proveedor": "Mercado Central"
+    },
+    {
+      "id": 2,
+      "nombre": "Pescado blanco",
+      "unidad": "kg",
+      "stock": 18,
+      "stockMinimo": 6,
+      "costo": 28.00,
+      "proveedor": "Pescadería La Marina"
+    },
+    {
+      "id": 3,
+      "nombre": "Lechuga",
+      "unidad": "kg",
+      "stock": 30,
+      "stockMinimo": 8,
+      "costo": 4.00,
+      "proveedor": "Verdulería Don José"
+    },
+    {
+      "id": 4,
+      "nombre": "Cebolla roja",
+      "unidad": "kg",
+      "stock": 12,
+      "stockMinimo": 4,
+      "costo": 3.00,
+      "proveedor": "Mercado Central"
+    },
+    {
+      "id": 5,
+      "nombre": "Ají amarillo",
+      "unidad": "kg",
+      "stock": 7,
+      "stockMinimo": 2,
+      "costo": 8.00,
+      "proveedor": "Mercado Abastos"
+    },
+    {
+      "id": 6,
+      "nombre": "Arroz",
+      "unidad": "kg",
+      "stock": 45,
+      "stockMinimo": 10,
+      "costo": 3.50,
+      "proveedor": "Distribuidora La Fe"
+    },
+    {
+      "id": 7,
+      "nombre": "Camarones",
+      "unidad": "kg",
+      "stock": 15,
+      "stockMinimo": 5,
+      "costo": 35.00,
+      "proveedor": "Pescadería Premium"
+    },
+    {
+      "id": 8,
+      "nombre": "Miso",
+      "unidad": "L",
+      "stock": 5,
+      "stockMinimo": 1,
+      "costo": 22.00,
+      "proveedor": "Distribuidor Asiático"
+    },
+    {
+      "id": 9,
+      "nombre": "Caldo de pescado",
+      "unidad": "L",
+      "stock": 20,
+      "stockMinimo": 5,
+      "costo": 5.00,
+      "proveedor": "Fábrica de caldos"
+    }
+  ],
+
+  "recetas": [
+    {
+      "id": 1,
+      "nombre": "Ceviche Clásico",
+      "nombrePlato": "Ceviche Clásico",
+      "descripcion": "Ceviche tradicional peruano",
+      "insumos": [
+        {
+          "idInsumo": 2,
+          "cantidadRequerida": 0.3,
+          "notas": "Pescado blanco cortado en cubos"
+        },
+        {
+          "idInsumo": 1,
+          "cantidadRequerida": 0.2,
+          "notas": "Jugo fresco de limón"
+        },
+        {
+          "idInsumo": 3,
+          "cantidadRequerida": 0.05,
+          "notas": "Lechuga cortada en juliana"
+        },
+        {
+          "idInsumo": 4,
+          "cantidadRequerida": 0.05,
+          "notas": "Cebolla roja en aros"
+        }
+      ],
+      "precioVenta": 28.00,
+      "costoProduccion": 10.50,
+      "margen": 62.5
+    },
+    {
+      "id": 2,
+      "nombre": "Arroz con Mariscos",
+      "nombrePlato": "Arroz con Mariscos",
+      "descripcion": "Arroz con camarones y pescado",
+      "insumos": [
+        {
+          "idInsumo": 6,
+          "cantidadRequerida": 0.2,
+          "notas": "Arroz grano largo"
+        },
+        {
+          "idInsumo": 7,
+          "cantidadRequerida": 0.2,
+          "notas": "Camarones limpios"
+        },
+        {
+          "idInsumo": 2,
+          "cantidadRequerida": 0.1,
+          "notas": "Filete de pescado"
+        },
+        {
+          "idInsumo": 9,
+          "cantidadRequerida": 0.4,
+          "notas": "Caldo de pescado caliente"
+        }
+      ],
+      "precioVenta": 35.00,
+      "costoProduccion": 15.80,
+      "margen": 54.9
+    },
+    {
+      "id": 3,
+      "nombre": "Ceviche Especial",
+      "nombrePlato": "Ceviche Especial",
+      "descripcion": "Ceviche premium con camarones",
+      "insumos": [
+        {
+          "idInsumo": 2,
+          "cantidadRequerida": 0.35,
+          "notas": "Pescado blanco premium"
+        },
+        {
+          "idInsumo": 7,
+          "cantidadRequerida": 0.1,
+          "notas": "Camarones grandes"
+        },
+        {
+          "idInsumo": 1,
+          "cantidadRequerida": 0.25,
+          "notas": "Jugo de limón fresco"
+        },
+        {
+          "idInsumo": 3,
+          "cantidadRequerida": 0.08,
+          "notas": "Lechuga de calidad"
+        },
+        {
+          "idInsumo": 5,
+          "cantidadRequerida": 0.03,
+          "notas": "Ají amarillo para darle color"
+        }
+      ],
+      "precioVenta": 42.00,
+      "costoProduccion": 16.20,
+      "margen": 61.4
+    },
+    {
+      "id": 4,
+      "nombre": "Causa Rellena",
+      "nombrePlato": "Causa Rellena",
+      "descripcion": "Causa limeña clásica",
+      "insumos": [
+        {
+          "idInsumo": 3,
+          "cantidadRequerida": 0.15,
+          "notas": "Papa amarilla cocida"
+        },
+        {
+          "idInsumo": 5,
+          "cantidadRequerida": 0.05,
+          "notas": "Ají amarillo para la masa"
+        },
+        {
+          "idInsumo": 1,
+          "cantidadRequerida": 0.1,
+          "notas": "Limón para aderezar"
+        }
+      ],
+      "precioVenta": 15.00,
+      "costoProduccion": 5.20,
+      "margen": 65.3
+    }
+  ],
+
+  "mesas": [
+    {
+      "id": 1,
+      "nombre": "Mesa 1",
+      "capacidad": 2,
+      "estado": "AVAILABLE",
+      "ubicacion": "Entrada"
+    },
+    {
+      "id": 2,
+      "nombre": "Mesa 2",
+      "capacidad": 4,
+      "estado": "OCCUPIED",
+      "ubicacion": "Centro"
+    },
+    {
+      "id": 3,
+      "nombre": "Mesa 3",
+      "capacidad": 4,
+      "estado": "WAITING_PAYMENT",
+      "ubicacion": "Fondo"
+    },
+    {
+      "id": 4,
+      "nombre": "Mesa 4",
+      "capacidad": 6,
+      "estado": "AVAILABLE",
+      "ubicacion": "Terraza"
+    },
+    {
+      "id": 5,
+      "nombre": "Mesa 5",
+      "capacidad": 2,
+      "estado": "AVAILABLE",
+      "ubicacion": "Ventana"
+    }
+  ],
+
+  "ejemploPedidoDelivery": {
+    "id": 1001,
+    "nombreCliente": "Juan Pérez García",
+    "telefono": "+51987654321",
+    "direccion": "Av. Principal 123, Departamento 4B",
+    "referencia": "Al lado del banco, puerta azul",
+    "notasExtra": "Sin cebolla en el ceviche. Extra limón en la causa.",
+    "items": [
+      {
+        "idProducto": 1,
+        "nombreProducto": "Ceviche Clásico",
+        "cantidad": 2,
+        "precioUnitario": 28.00,
+        "subtotal": 56.00
+      },
+      {
+        "idProducto": 4,
+        "nombreProducto": "Causa Rellena",
+        "cantidad": 1,
+        "precioUnitario": 15.00,
+        "subtotal": 15.00
+      }
+    ],
+    "totalMontos": {
+      "subtotal": 71.00,
+      "impuesto": 0.00,
+      "delivery": 5.00,
+      "total": 76.00
+    },
+    "estado": "pending",
+    "fechaCreacion": "2026-01-08T19:45:00",
+    "horaEstimadaEntrega": "20:30"
+  },
+
+  "ejemploTransaccionInventario": {
+    "id": 1,
+    "idInsumo": 2,
+    "nombreInsumo": "Pescado blanco",
+    "cambioStock": -0.3,
+    "razon": "recipe-used",
+    "detalles": "Usado en Ceviche Clásico (Pedido #1001)",
+    "usuarioResponsable": "admin",
+    "fecha": "2026-01-08T19:45:30",
+    "stockAnterior": 18.0,
+    "stockPosterior": 17.7
+  },
+
+  "estadosAlert": [
+    {
+      "tipo": "bajo-stock",
+      "severidad": "warning",
+      "insumo": "Ají amarillo",
+      "stockActual": 7,
+      "stockMinimo": 2,
+      "mensaje": "Stock bajo. Stock actual: 7 kg (límite: 2 kg)"
+    },
+    {
+      "tipo": "bajo-stock",
+      "severidad": "critical",
+      "insumo": "Miso",
+      "stockActual": 5,
+      "stockMinimo": 1,
+      "mensaje": "Stock CRÍTICO. Stock actual: 5 L (límite: 1 L). REORDENA INMEDIATAMENTE"
+    }
+  ],
+
+  "permisos": {
+    "ADMIN": {
+      "verMesas": true,
+      "pagarMesas": true,
+      "verInventario": true,
+      "ajustarInventario": true,
+      "crearDelivery": true,
+      "verDelivery": true,
+      "imprimirTicket": true,
+      "reportes": true
+    },
+    "MOZO": {
+      "verMesas": true,
+      "pagarMesas": false,
+      "verInventario": false,
+      "ajustarInventario": false,
+      "crearDelivery": false,
+      "verDelivery": false,
+      "imprimirTicket": false,
+      "reportes": false
+    },
+    "COCINA": {
+      "verMesas": false,
+      "pagarMesas": false,
+      "verInventario": true,
+      "ajustarInventario": false,
+      "crearDelivery": false,
+      "verDelivery": true,
+      "imprimirTicket": false,
+      "reportes": false
+    }
+  }
+}

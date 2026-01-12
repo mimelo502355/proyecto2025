@@ -69,6 +69,11 @@ public class SecurityConfig {
                         // Permitir acceso público a autenticación y endpoints de prueba
                         .requestMatchers(new AntPathRequestMatcher("/api/auth/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/api/test/**")).permitAll()
+                        // Permitir acceso a tablas y productos sin autenticación (para admin)
+                        .requestMatchers(new AntPathRequestMatcher("/api/tables/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/products/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/inventory/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/delivery/**")).permitAll()
                         // Swagger (opcional, pero útil tenerlo listo)
                         .requestMatchers(new AntPathRequestMatcher("/v3/api-docs/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**")).permitAll()
@@ -85,11 +90,13 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        // AllowedOriginPatterns es más flexible que AllowedOrigins
-        configuration.setAllowedOriginPatterns(Arrays.asList("*"));
+        // Permitir solicitudes desde localhost en puertos 4200, 4300, 4301
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200", "http://localhost:4300", "http://localhost:4301"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "x-auth-token"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
+        configuration.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
         configuration.setAllowCredentials(true);
+        configuration.setMaxAge(3600L);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;

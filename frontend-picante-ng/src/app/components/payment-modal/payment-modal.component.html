@@ -1,0 +1,267 @@
+<div class="modal-overlay" *ngIf="isOpen" (click)="onClose()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+            <h2 class="modal-title">
+                <i class="bi bi-cash-coin"></i> Cobro - Mesa {{ table?.name }}
+            </h2>
+            <button type="button" class="btn-close" (click)="onClose()"></button>
+        </div>
+
+        <div class="modal-body">
+            <!-- Información de la orden -->
+            <div class="order-info card mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Mesa:</strong> {{ table?.name }}</p>
+                            <p><strong>Total:</strong> <span class="text-success fw-bold">S/. {{ order?.totalAmount | number: '1.2-2' }}</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Items:</strong> {{ order?.items?.length || 0 }}</p>
+                            <p><strong>Estado:</strong> <span class="badge bg-warning">{{ order?.status }}</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detalle del Pedido -->
+            <div class="order-items card mb-4">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0"><i class="bi bi-list-ul"></i> Detalle del Pedido</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div *ngIf="order?.items?.length; else noItems">
+                        <div class="table-responsive">
+                            <table class="table table-sm mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th class="text-center">Cant.</th>
+                                        <th class="text-end">Precio</th>
+                                        <th class="text-end">Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let it of order?.items">
+                                        <td>{{ it.productName }}</td>
+                                        <td class="text-center">{{ it.quantity }}</td>
+                                        <td class="text-end">S/. {{ it.unitPrice | number:'1.2-2' }}</td>
+                                        <td class="text-end">S/. {{ it.subtotal | number:'1.2-2' }}</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="3" class="text-end">Total</th>
+                                        <th class="text-end">S/. {{ order?.totalAmount | number:'1.2-2' }}</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <ng-template #noItems>
+                        <div class="p-3 text-muted">No hay items registrados en esta orden.</div>
+                    </ng-template>
+                </div>
+            </div>
+
+            <!-- Tiempos de Mozo y Cocina -->
+            <div class="times-report card mb-4">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="bi bi-clock-history"></i> Reporte de Tiempos de Servicio</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-6">
+                            <div class="time-stat">
+                                <p class="time-label"><i class="bi bi-person-vest"></i> Tiempo Mozo (Toma de Orden)</p>
+                                <p class="time-value">{{ mozoTimeFormatted }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="time-stat">
+                                <p class="time-label"><i class="bi bi-hat"></i> Tiempo Cocina (Preparación)</p>
+                                <p class="time-value">{{ kitchenTimeFormatted }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tipo de Comprobante -->
+            <div class="form-section mb-4">
+                <label class="form-label fw-bold">
+                    <i class="bi bi-receipt"></i> Tipo de Comprobante
+                </label>
+                <div class="voucher-options">
+                    <div class="voucher-option" *ngFor="let vType of voucherTypes">
+                        <input 
+                            type="radio" 
+                            [id]="'voucher-' + vType.value" 
+                            [value]="vType.value" 
+                            [(ngModel)]="paymentData.voucherType"
+                            name="voucherType"
+                        >
+                        <label [for]="'voucher-' + vType.value" class="ms-2">
+                            {{ vType.label }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Campos dinámicos según tipo de comprobante -->
+            <div class="form-section mb-4">
+                <!-- Campo DNI para Boleta -->
+                <div *ngIf="showDniField" class="mb-3">
+                    <label for="dni" class="form-label">
+                        <i class="bi bi-card-text"></i> DNI
+                    </label>
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="dni" 
+                            placeholder="Ingrese DNI (8 dígitos)"
+                            [(ngModel)]="paymentData.dni"
+                            maxlength="8"
+                            pattern="[0-9]{8}"
+                        >
+                        <button 
+                            type="button" 
+                            class="btn btn-outline-primary"
+                            (click)="consultarDNI()"
+                            [disabled]="loadingDNI || !paymentData.dni"
+                        >
+                            <span *ngIf="!loadingDNI"><i class="bi bi-search"></i> Consultar</span>
+                            <span *ngIf="loadingDNI"><i class="bi bi-hourglass-split"></i> Consultando...</span>
+                        </button>
+                    </div>
+                    <small class="text-danger d-block mt-1" *ngIf="dniError">{{ dniError }}</small>
+                    <div class="alert alert-success alert-sm mt-2" *ngIf="dniData">
+                        <p class="mb-0"><strong>Persona encontrada:</strong></p>
+                        <p class="mb-0" *ngIf="dniData.nombres">
+                            {{ dniData.apellidoPaterno }} {{ dniData.apellidoMaterno }} {{ dniData.nombres }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Campo RUC para Factura -->
+                <div *ngIf="showRucField" class="mb-3">
+                    <label for="ruc" class="form-label">
+                        <i class="bi bi-building"></i> RUC
+                    </label>
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="ruc" 
+                            placeholder="Ingrese RUC (11 dígitos)"
+                            [(ngModel)]="paymentData.ruc"
+                            maxlength="11"
+                            pattern="[0-9]{11}"
+                        >
+                        <button 
+                            type="button" 
+                            class="btn btn-outline-primary"
+                            (click)="consultarRUC()"
+                            [disabled]="loadingRUC || !paymentData.ruc"
+                        >
+                            <span *ngIf="!loadingRUC"><i class="bi bi-search"></i> Consultar</span>
+                            <span *ngIf="loadingRUC"><i class="bi bi-hourglass-split"></i> Consultando...</span>
+                        </button>
+                    </div>
+                    <small class="text-danger d-block mt-1" *ngIf="rucError">{{ rucError }}</small>
+                    <div class="alert alert-success alert-sm mt-2" *ngIf="rucData">
+                        <p class="mb-0"><strong>Empresa encontrada:</strong></p>
+                        <p class="mb-0" *ngIf="rucData.razonSocial">{{ rucData.razonSocial }}</p>
+                        <p class="mb-0" *ngIf="!rucData.razonSocial && rucData.nombre">{{ rucData.nombre }}</p>
+                    </div>
+                </div>
+
+                <!-- Campo Nombre para Factura -->
+                <div *ngIf="paymentData.voucherType === 'FACTURA'" class="mb-3">
+                    <label for="customerName" class="form-label">
+                        <i class="bi bi-person"></i> Razón Social
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="customerName" 
+                        placeholder="Nombre de la empresa"
+                        [(ngModel)]="paymentData.customerName"
+                    >
+                </div>
+            </div>
+
+            <!-- Tipo de Pago -->
+            <div class="form-section mb-4">
+                <label class="form-label fw-bold">
+                    <i class="bi bi-credit-card"></i> Tipo de Pago
+                </label>
+                <div class="payment-methods">
+                    <div class="payment-method" *ngFor="let method of paymentMethods">
+                        <input 
+                            type="radio" 
+                            [id]="'payment-' + method.value" 
+                            [value]="method.value" 
+                            [(ngModel)]="paymentData.paymentMethod"
+                            name="paymentMethod"
+                        >
+                        <label [for]="'payment-' + method.value" class="ms-2">
+                            <span class="badge" [ngClass]="{
+                                'bg-success': method.value === 'YAPE',
+                                'bg-warning': method.value === 'EFECTIVO',
+                                'bg-primary': method.value === 'TARJETA',
+                                'bg-secondary': method.value === 'OTRO'
+                            }">
+                                {{ method.label }}
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monto Recibido y Vuelto -->
+            <div class="form-section mb-4" *ngIf="paymentData.paymentMethod === 'EFECTIVO'">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="amountReceived" class="form-label fw-bold">
+                            <i class="bi bi-cash"></i> Monto Recibido
+                        </label>
+                        <input 
+                            type="number" 
+                            class="form-control" 
+                            id="amountReceived"
+                            [(ngModel)]="paymentData.amountReceived"
+                            step="0.01"
+                            min="0"
+                        >
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">
+                            <i class="bi bi-arrow-return-left"></i> Vuelto
+                        </label>
+                        <div class="amount-display">
+                            <span [ngClass]="{'text-danger': change < 0, 'text-success': change >= 0}">
+                                S/. {{ change | number: '1.2-2' }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="modal-footer mt-4">
+                <button type="button" class="btn btn-secondary" (click)="onClose()">
+                    <i class="bi bi-x-circle"></i> Cancelar
+                </button>
+                <button 
+                    type="button" 
+                    class="btn btn-success btn-lg" 
+                    (click)="onConfirm()"
+                >
+                    <i class="bi bi-check-circle"></i> Confirmar Pago
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

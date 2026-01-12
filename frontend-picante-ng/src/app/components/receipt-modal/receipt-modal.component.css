@@ -1,0 +1,239 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 2px solid #f8f9fa;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-close {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+.btn-close:hover {
+    opacity: 0.8;
+}
+
+.modal-body {
+    padding: 2rem 1.5rem;
+}
+
+.receipt-body {
+    background: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+}
+
+.receipt-header {
+    margin-bottom: 1rem;
+}
+
+.restaurant-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.restaurant-info {
+    margin: 0.25rem 0;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.receipt-divider {
+    border: none;
+    border-top: 1px dotted #ccc;
+    margin: 0.75rem 0;
+}
+
+.receipt-section {
+    margin-bottom: 0.5rem;
+}
+
+.receipt-table {
+    width: 100%;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.receipt-table thead {
+    border-bottom: 1px solid #ccc;
+}
+
+.receipt-table th {
+    padding: 0.4rem 0;
+    text-align: left;
+    font-weight: bold;
+}
+
+.receipt-table td {
+    padding: 0.4rem 0;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.totals {
+    margin: 1rem 0;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+.amount-due {
+    background: #f0f0f0;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+}
+
+.payment-method {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.service-times {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.receipt-footer {
+    margin-top: 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-top: 2px solid #f8f9fa;
+    background: #f8f9fa;
+    border-radius: 0 0 12px 12px;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-primary {
+    background-color: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #5568d3;
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .modal-overlay {
+        background: transparent;
+    }
+
+    .modal-content {
+        box-shadow: none;
+        width: 80mm;
+        max-width: none;
+    }
+
+    .modal-header,
+    .modal-footer,
+    .btn-close {
+        display: none;
+    }
+
+    .receipt-body {
+        padding: 0;
+        font-size: 0.8rem;
+    }
+}

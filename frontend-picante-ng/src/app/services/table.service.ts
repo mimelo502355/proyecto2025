@@ -9,6 +9,7 @@ export interface RestaurantTable {
   status: 'AVAILABLE' | 'OCCUPIED' | 'READY_TO_KITCHEN' | 'WAITING_KITCHEN' | 'PREPARING' | 'READY' | 'SERVING' | 'WAITING_PAYMENT';
   occupiedAt?: string;
   preparationAt?: string;
+  currentOrder?: RestaurantOrder;
 }
 
 export interface OrderItem {
@@ -81,5 +82,13 @@ export class TableService {
 
   freeTable(id: number): Observable<string> {
     return this.http.post(`${this.apiUrl}/${id}/free`, {}, { responseType: 'text' });
+  }
+
+  cancelOrder(id: number): Observable<string> {
+    return this.http.post(`${this.apiUrl}/${id}/cancel-order`, {}, { responseType: 'text' });
+  }
+
+  getCompletedOrders(): Observable<RestaurantOrder[]> {
+    return this.http.get<RestaurantOrder[]>(`${this.apiUrl}/orders/completed`);
   }
 }

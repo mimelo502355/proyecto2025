@@ -1,0 +1,269 @@
+<!-- MODAL PARA GESTIÓN DE MENÚ -->
+<div *ngIf="isOpen" class="modal-overlay">
+  <div class="modal-content">
+    <!-- HEADER -->
+    <div class="modal-header">
+      <h2>{{ viewMode === 'edit' ? 'Gestión de Menú' : 'Vista Previa - Menú Cliente' }}</h2>
+      <div class="header-actions">
+        <button class="btn-toggle-view" (click)="toggleViewMode()" *ngIf="editMode">
+          {{ viewMode === 'edit' ? '👁️ Ver Menú' : '✏️ Editar' }}
+        </button>
+        <button class="close-btn" (click)="closeModal()">✕</button>
+      </div>
+    </div>
+
+    <!-- CONTENIDO EDITABLE (ADMIN) -->
+    <div *ngIf="editMode && viewMode === 'edit'" class="modal-body edit-mode">
+      <div class="edit-panel">
+        <!-- SECCIÓN DE CATEGORÍAS -->
+        <div class="section">
+          <div class="section-header">
+            <h3>Categorías</h3>
+            <button class="btn-primary" (click)="toggleAddCategoryForm()">
+              {{ showAddCategoryForm ? '✕ Cancelar' : '+ Nueva Categoría' }}
+            </button>
+          </div>
+
+          <!-- FORMULARIO AGREGAR CATEGORÍA -->
+          <div *ngIf="showAddCategoryForm" class="form-group">
+            <input
+              type="text"
+              [(ngModel)]="newCategoryName"
+              placeholder="Nombre de la categoría"
+              class="input-field"
+            />
+            <input
+              type="text"
+              [(ngModel)]="newCategoryDescription"
+              placeholder="Descripción (opcional)"
+              class="input-field"
+            />
+            <button class="btn-success" (click)="addCategory()">Guardar</button>
+          </div>
+
+          <!-- LISTA DE CATEGORÍAS -->
+          <div class="list">
+            <div *ngFor="let category of categories" class="list-item">
+              <div *ngIf="editingCategoryId !== category.id" class="item-content">
+                <span class="item-name">{{ category.name }}</span>
+                <span class="item-meta">({{ getProductCountByCategory(category.id) }} productos)</span>
+              </div>
+              
+              <div *ngIf="editingCategoryId === category.id" class="edit-form">
+                <input
+                  type="text"
+                  [(ngModel)]="editingCategoryName"
+                  placeholder="Nombre"
+                  class="input-field"
+                />
+                <input
+                  type="text"
+                  [(ngModel)]="editingCategoryDescription"
+                  placeholder="Descripción (opcional)"
+                  class="input-field"
+                />
+              </div>
+
+              <div class="item-actions">
+                <button
+                  *ngIf="editingCategoryId !== category.id"
+                  class="btn-edit"
+                  (click)="startEditCategory(category)"
+                >
+                  Editar
+                </button>
+                <button
+                  *ngIf="editingCategoryId === category.id"
+                  class="btn-success"
+                  (click)="saveEditCategory()"
+                >
+                  Guardar
+                </button>
+                <button
+                  *ngIf="editingCategoryId === category.id"
+                  class="btn-cancel"
+                  (click)="cancelEditCategory()"
+                >
+                  Cancelar
+                </button>
+                <button
+                  class="btn-delete"
+                  (click)="deleteCategory(category.id)"
+                >
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECCIÓN DE PRODUCTOS -->
+        <div class="section">
+          <div class="section-header">
+            <h3>Productos</h3>
+            <div class="section-actions">
+              <button class="btn-primary" (click)="toggleAddProductForm()">
+                {{ showAddProductForm ? '✕ Cancelar' : '+ Nuevo Producto' }}
+              </button>
+            </div>
+          </div>
+
+          <!-- BARRA DE SELECCIÓN MÚLTIPLE -->
+          <div class="selection-bar" *ngIf="products.length > 0">
+            <div class="selection-info">
+              <label class="checkbox-label">
+                <input 
+                  type="checkbox" 
+                  [checked]="selectedProductIds.size === products.length && products.length > 0"
+                  [indeterminate]="selectedProductIds.size > 0 && selectedProductIds.size < products.length"
+                  (change)="selectedProductIds.size === products.length ? deselectAllProducts() : selectAllProducts()"
+                />
+                <span>Seleccionar todos ({{ selectedProductIds.size }} seleccionados)</span>
+              </label>
+            </div>
+            <button 
+              class="btn-delete-multiple" 
+              (click)="deleteSelectedProducts()"
+              [disabled]="selectedProductIds.size === 0"
+            >
+              🗑️ Eliminar Seleccionados ({{ selectedProductIds.size }})
+            </button>
+          </div>
+
+          <!-- FORMULARIO AGREGAR PRODUCTO -->
+          <div *ngIf="showAddProductForm" class="form-group">
+            <input
+              type="text"
+              [(ngModel)]="newProductName"
+              placeholder="Nombre del producto"
+              class="input-field"
+            />
+            <input
+              type="number"
+              [(ngModel)]="newProductPrice"
+              placeholder="Precio"
+              class="input-field"
+              step="0.01"
+            />
+            <select [(ngModel)]="newProductCategoryId" class="input-field">
+              <option [value]="null">Seleccionar categoría</option>
+              <option *ngFor="let cat of categories" [value]="cat.id">
+                {{ cat.name }}
+              </option>
+            </select>
+            <button class="btn-success" (click)="addProduct()">Guardar</button>
+          </div>
+
+          <!-- LISTA DE PRODUCTOS -->
+          <div class="list">
+            <div *ngFor="let product of products" class="list-item product-item">
+              <!-- Checkbox de selección -->
+              <label class="product-checkbox">
+                <input 
+                  type="checkbox" 
+                  [checked]="isProductSelected(product.id)"
+                  (change)="toggleProductSelection(product.id)"
+                />
+              </label>
+
+              <div *ngIf="editingProductId !== product.id" class="item-content">
+                <div class="product-info">
+                  <span class="item-name">{{ product.name }}</span>
+                  <span class="item-meta">{{ getCategoryName(product.category?.id) }}</span>
+                </div>
+                <span class="product-price">${{ product.price.toFixed(2) }}</span>
+              </div>
+
+              <div *ngIf="editingProductId === product.id" class="edit-form">
+                <input
+                  type="text"
+                  [(ngModel)]="editingProductName"
+                  placeholder="Nombre"
+                  class="input-field"
+                />
+                <input
+                  type="number"
+                  [(ngModel)]="editingProductPrice"
+                  placeholder="Precio"
+                  class="input-field"
+                  step="0.01"
+                />
+                <select [(ngModel)]="editingProductCategoryId" class="input-field">
+                  <option *ngFor="let cat of categories" [value]="cat.id">
+                    {{ cat.name }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="item-actions">
+                <button
+                  *ngIf="editingProductId !== product.id"
+                  class="btn-edit"
+                  (click)="startEditProduct(product)"
+                >
+                  Editar
+                </button>
+                <button
+                  *ngIf="editingProductId === product.id"
+                  class="btn-success"
+                  (click)="saveEditProduct()"
+                >
+                  Guardar
+                </button>
+                <button
+                  *ngIf="editingProductId === product.id"
+                  class="btn-cancel"
+                  (click)="cancelEditProduct()"
+                >
+                  Cancelar
+                </button>
+                <button
+                  class="btn-delete"
+                  (click)="deleteProduct(product.id)"
+                >
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENIDO READONLY (MESERO O VISTA PREVIA) -->
+    <div *ngIf="!editMode || viewMode === 'preview'" class="modal-body view-mode">
+      <div class="search-box">
+        <input
+          type="text"
+          [(ngModel)]="searchQuery"
+          placeholder="Buscar producto..."
+          class="search-input"
+        />
+      </div>
+
+      <div class="categories-tabs">
+        <button
+          *ngFor="let category of categories; let i = index"
+          (click)="activeTab = i"
+          [class.active]="activeTab === i"
+          class="tab-btn"
+        >
+          {{ category.name }}
+        </button>
+      </div>
+
+      <div class="products-grid">
+        <div
+          *ngFor="let product of getProductsByCategory(categories[activeTab]?.id)"
+          class="product-card"
+        >
+          <div class="product-card-header">
+            <h4>{{ product.name }}</h4>
+            <span class="product-card-price">${{ product.price.toFixed(2) }}</span>
+          </div>
+          <button class="btn-select">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

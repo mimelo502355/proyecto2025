@@ -22,9 +22,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado con nombre: " + username));
 
-        System.out.println("🔥🔥 DEBUG LOGIN - Usuario: " + username);
-        System.out.println("🔥🔥 DEBUG LOGIN - Password en BD: " + user.getPassword());
-
         return CustomUserDetails.build(user);
     }
 }

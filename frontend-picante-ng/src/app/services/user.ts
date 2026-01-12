@@ -66,9 +66,9 @@ export class UserService {
     return this.http.put<User>(`${this.apiUrl}/${id}/lock?lock=${lock}`, {}, { headers });
   }
 
-  // Helper para obtener el token del localStorage
+  // Helper para obtener el token del sessionStorage (aislamiento por pestaña)
   private getToken(): string {
-    const user = localStorage.getItem('user');
+    const user = sessionStorage.getItem('user');
     if (user) {
       const userData = JSON.parse(user);
       return userData.accessToken || '';

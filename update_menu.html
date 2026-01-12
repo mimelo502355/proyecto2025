@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Menú - El Picante</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #f5f5f5;
+        }
+        .container { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            color: #e74c3c; 
+            text-align: center; 
+            margin-bottom: 30px;
+        }
+        button { 
+            background: #e74c3c; 
+            color: white; 
+            border: none; 
+            padding: 15px 30px; 
+            font-size: 16px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            width: 100%;
+            margin: 10px 0;
+        }
+        button:hover { background: #c0392b; }
+        button:disabled { background: #bdc3c7; cursor: not-allowed; }
+        .log { 
+            background: #2c3e50; 
+            color: #ecf0f1; 
+            padding: 15px; 
+            border-radius: 5px; 
+            height: 300px; 
+            overflow-y: auto; 
+            font-family: 'Courier New', monospace; 
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+        .warning {
+            background: #f39c12;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍽️ Actualizar Menú "El Picante"</h1>
+        
+        <div class="warning">
+            <strong>⚠️ ATENCIÓN:</strong> Esta operación eliminará todos los productos existentes y los reemplazará con el nuevo menú.
+        </div>
+
+        <button id="loginBtn" onclick="login()">🔐 Iniciar Sesión como Admin</button>
+        <button id="clearBtn" onclick="clearData()" disabled>🗑️ Limpiar Productos Existentes</button>
+        <button id="updateBtn" onclick="updateMenu()" disabled>✨ Cargar Nuevo Menú</button>
+        
+        <div class="log" id="log">Conectando a la API...</div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8080/api';
+        let token = '';
+        
+        const log = document.getElementById('log');
+        const loginBtn = document.getElementById('loginBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const updateBtn = document.getElementById('updateBtn');
+
+        function logMessage(msg) {
+            log.textContent += new Date().toLocaleTimeString() + ' - ' + msg + '\n';
+            log.scrollTop = log.scrollHeight;
+        }
+
+        async function login() {
+            loginBtn.disabled = true;
+            logMessage('🔐 Iniciando sesión como admin...');
+            
+            try {
+                const response = await fetch(`${API_BASE}/auth/signin`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: 'admin', password: '123456' })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    token = data.accessToken;
+                    logMessage('✅ Sesión iniciada correctamente');
+                    clearBtn.disabled = false;
+                    updateBtn.disabled = false;
+                } else {
+                    logMessage('❌ Error al iniciar sesión');
+                    loginBtn.disabled = false;
+                }
+            } catch (error) {
+                logMessage('❌ Error de conexión: ' + error.message);
+                loginBtn.disabled = false;
+            }
+        }
+
+        async function clearData() {
+            clearBtn.disabled = true;
+            logMessage('🗑️ Eliminando productos existentes...');
+            
+            try {
+                // Obtener todos los productos
+                const response = await fetch(`${API_BASE}/products`);
+                const products = await response.json();
+                
+                logMessage(`📋 Encontrados ${products.length} productos a eliminar`);
+                
+                // Eliminar cada producto
+                for (const product of products) {
+                    try {
+                        await fetch(`${API_BASE}/products/${product.id}`, {
+                            method: 'DELETE',
+                            headers: { 'Authorization': `Bearer ${token}` }
+                        });
+                        logMessage(`🗑️ Eliminado: ${product.name}`);
+                    } catch (error) {
+                        logMessage(`❌ Error eliminando ${product.name}: ${error.message}`);
+                    }
+                }
+                
+                logMessage('✅ Limpieza completada');
+                clearBtn.disabled = false;
+            } catch (error) {
+                logMessage('❌ Error en limpieza: ' + error.message);
+                clearBtn.disabled = false;
+            }
+        }
+
+        async function updateMenu() {
+            updateBtn.disabled = true;
+            logMessage('🍽️ Creando nuevo menú...');
+            
+            const categories = [
+                { name: 'Barra Cevichera' },
+                { name: 'Entradas Calientes' },
+                { name: 'Fondos Marinos y Criollos' },
+                { name: 'Rondas Para Compartir' },
+                { name: 'Bebidas' }
+            ];
+
+            const products = [
+                // Barra Cevichera
+                { name: 'Ceviche Clásico', price: 32.00, description: 'Pesca del día, leche de tigre tradicional, camote y choclo', category: 'Barra Cevichera' },
+                { name: 'Ceviche "El Picante"', price: 35.00, description: 'Mixto con crema de rocoto ahumado y chicharrón de pota', category: 'Barra Cevichera' },
+                { name: 'Tiradito al Ají Amarillo', price: 30.00, description: 'Láminas de pescado en crema de ají amarillo y maíz chulpi', category: 'Barra Cevichera' },
+                { name: 'Leche de Tigre "Levántate Lázaro"', price: 18.00, description: 'Potente concentrado con trozos de pescado y mariscos', category: 'Barra Cevichera' },
+                
+                // Entradas Calientes
+                { name: 'Jalea Real', price: 38.00, description: 'Mixtura de mariscos y pescado crocante con salsa tártara y criolla', category: 'Entradas Calientes' },
+                { name: 'Causa Limeña de Langostinos', price: 24.00, description: 'Papa amarilla prensada rellena de palta y langostinos en salsa golf', category: 'Entradas Calientes' },
+                { name: 'Wantanes de Pulpa de Cangrejo', price: 22.00, description: 'Fritos y servidos con salsa de tamarindo', category: 'Entradas Calientes' },
+                
+                // Fondos Marinos y Criollos
+                { name: 'Arroz con Mariscos "El Picante"', price: 36.00, description: 'Arroz meloso al wok con frutos del mar y toque de parmesano', category: 'Fondos Marinos y Criollos' },
+                { name: 'Tacu Tacu en Salsa de Mariscos', price: 38.00, description: 'Frijol y arroz dorado cubierto con cremosa salsa de mariscos', category: 'Fondos Marinos y Criollos' },
+                { name: 'Lomo Saltado Clásico', price: 40.00, description: 'Trozos de lomo fino al wok, cebolla, tomate, papas fritas y arroz', category: 'Fondos Marinos y Criollos' },
+                { name: 'Chaufa Amazónico con Cecina', price: 34.00, description: 'Arroz chaufa con cecina, plátano maduro y huevo', category: 'Fondos Marinos y Criollos' },
+                
+                // Rondas Para Compartir
+                { name: 'Ronda Fría', price: 55.00, description: 'Ceviche clásico + Causa de pulpo + Tiradito bicolor', category: 'Rondas Para Compartir' },
+                { name: 'Ronda Caliente', price: 60.00, description: 'Arroz con mariscos + Chicharrón de pescado + Chaufa de mariscos', category: 'Rondas Para Compartir' },
+                
+                // Bebidas
+                { name: 'Chicha Morada (Tarro)', price: 12.00, description: 'Refrescante chicha morada tradicional en tarro', category: 'Bebidas' },
+                { name: 'Chicha de Maracuyá (Tarro)', price: 12.00, description: 'Refrescante chicha de maracuyá en tarro', category: 'Bebidas' },
+                { name: 'Gaseosa Personal', price: 2.50, description: 'Gaseosa personal 350ml', category: 'Bebidas' },
+                { name: 'Gaseosa 1 Litro', price: 10.00, description: 'Gaseosa de 1 litro', category: 'Bebidas' },
+                { name: 'Gaseosa Gordita-Jumbo', price: 5.00, description: 'Gaseosa tamaño jumbo 500ml', category: 'Bebidas' },
+                { name: 'Gaseosa 2.5L', price: 15.00, description: 'Gaseosa de 2.5 litros', category: 'Bebidas' },
+                { name: 'Agua Mineral (1/2 L)', price: 2.50, description: 'Agua mineral de medio litro', category: 'Bebidas' },
+                { name: 'Cerveza Pilsen 630', price: 10.00, description: 'Cerveza Pilsen de 630ml', category: 'Bebidas' },
+                { name: 'Cerveza Trigo 620', price: 10.00, description: 'Cerveza Trigo de 620ml', category: 'Bebidas' }
+            ];
+
+            try {
+                // 1. Crear categorías
+                const categoryMap = {};
+                for (const cat of categories) {
+                    logMessage(`📂 Creando categoría: ${cat.name}`);
+                    const response = await fetch(`${API_BASE}/categories`, {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}` 
+                        },
+                        body: JSON.stringify(cat)
+                    });
+                    
+                    if (response.ok) {
+                        const newCat = await response.json();
+                        categoryMap[cat.name] = newCat;
+                        logMessage(`✅ Categoría creada: ${cat.name} (ID: ${newCat.id})`);
+                    } else {
+                        logMessage(`❌ Error creando categoría: ${cat.name}`);
+                    }
+                }
+
+                // 2. Crear productos
+                for (const prod of products) {
+                    const category = categoryMap[prod.category];
+                    if (!category) {
+                        logMessage(`❌ Categoría no encontrada para: ${prod.name}`);
+                        continue;
+                    }
+
+                    const productData = {
+                        name: prod.name,
+                        price: prod.price,
+                        description: prod.description,
+                        available: true,
+                        category: category
+                    };
+
+                    logMessage(`🍽️ Creando producto: ${prod.name}`);
+                    const response = await fetch(`${API_BASE}/products`, {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}` 
+                        },
+                        body: JSON.stringify(productData)
+                    });
+                    
+                    if (response.ok) {
+                        logMessage(`✅ Producto creado: ${prod.name} - S/ ${prod.price}`);
+                    } else {
+                        const error = await response.text();
+                        logMessage(`❌ Error creando ${prod.name}: ${error}`);
+                    }
+                }
+
+                logMessage('🎉 ¡MENÚ ACTUALIZADO EXITOSAMENTE!');
+                logMessage('📋 Resumen:');
+                logMessage(`   📂 ${categories.length} categorías`);
+                logMessage(`   🍽️ ${products.length} productos`);
+                logMessage('');
+                logMessage('💡 Puedes cerrar esta página y usar el sistema');
+                
+            } catch (error) {
+                logMessage('❌ Error actualizando menú: ' + error.message);
+            }
+            
+            updateBtn.disabled = false;
+        }
+
+        // Verificar conexión al cargar
+        window.onload = () => {
+            fetch(`${API_BASE}/products`)
+                .then(() => logMessage('✅ Conexión con la API establecida'))
+                .catch(() => logMessage('❌ No se puede conectar con la API'));
+        };
+    </script>
+</body>
+</html>
