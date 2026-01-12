@@ -90,8 +90,15 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        // Permitir solicitudes desde localhost en puertos 4200, 4300, 4301
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200", "http://localhost:4300", "http://localhost:4301"));
+        // Permitir solicitudes desde localhost y dominio personalizado
+        configuration.setAllowedOrigins(Arrays.asList(
+            "http://localhost:4200", 
+            "http://localhost:4300", 
+            "http://localhost:4301",
+            "http://localhost:4201",
+            "http://picante-sistema.com:4201",
+            "http://picante-sistema.com:8080"
+        ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
